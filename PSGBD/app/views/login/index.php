@@ -16,7 +16,7 @@
 
 <body>
 <div class="main">
-    <form action="login" method="post">
+    <form action="<?php echo URL ?>Login/signIn" method="post">
         <h1><span>Employer</span> <lable> Login </lable> </h1>
         <div class="inset">
             <p>

@@ -5,6 +5,7 @@ class App
     protected $controller = 'home';
     protected $method = 'index';
     protected $params = [];
+
     public function __construct()
     {
         $url = $this->parseUrl();
@@ -21,8 +22,9 @@ class App
             }
         }
         $this->params = $url ? array_values($url) : [];
-        call_user_func_array([$this->controller,$this->method],$this->params);
+        call_user_func_array([$this->controller, $this->method], $this->params);
     }
+
     public function parseUrl()
     {
         if (isset($_GET['url']))

@@ -1,7 +1,7 @@
 <?php
 require_once 'core/App.php';
 require_once 'core/Controller.php';
-require_once 'app/core/Model.php';
+require_once 'core/Model.php';
 /**
  * Configuration for: Error reporting
  * Useful to show every little problem during development, but only show hard errors in production
