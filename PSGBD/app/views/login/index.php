@@ -22,10 +22,12 @@
             <p>
                 <label for="userName">USER NAME</label>
                 <input type="text" placeholder="User Name" required/>
+                <span class="help-block"><?php echo $data['name']; ?></span>
             </p>
             <p>
                 <label for="password">PASSWORD</label>
                 <input type="password" placeholder="password" required/>
+                <span class="help-block"><?php echo $data['pass']; ?></span>
             </p>
             <p>
                 <input type="checkbox" name="remember" id="remember">
@@ -34,7 +36,6 @@
         </div>
 
         <p class="p-container">
-            <span><a href="#">Forgot password ?</a></span>
             <input type="submit" value="Login">
         </p>
     </form>

@@ -31,10 +31,9 @@ class Login extends Controller
             $password = $_POST['password'];
 
             $user_model = $this->loadModel('UserModel');
-            $result = $user_model->getInfo($username);
+            $result = $user_model->exists($username,$password);
             if (!empty($result)) {
-                $verify = password_verify($password, $result['password']);
-                if ($verify == true) {
+                if ($password == $result['password']) {
                     session_start();
                     unset($_SESSION['username_err']);
                     unset($_SESSION['[password_err']);
