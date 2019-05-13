@@ -32,28 +32,29 @@ class Login extends Controller
 
             $user_model = $this->loadModel('UserModel');
             $result = $user_model->exists($username,$password);
-            if (!empty($result)) {
-                if ($password == $result['password']) {
+            if ($result == 1) {
+                echo "da";
+                if ($password == $result['user_pass']) {
                     session_start();
                     unset($_SESSION['username_err']);
                     unset($_SESSION['[password_err']);
-                    $_SESSION['userID'] = $result['id'];
+                    $_SESSION['userID'] = $result['username'];
                     if (isset($_SESSION['userID'])) {
-                        header('Location: ' . URL . 'Home');
+                        //header('Location: ' . URL . 'Home');
                     } else {
-                        header('Location: ' . URL . 'Login');
+                       // header('Location: ' . URL . 'Login');
                     }
                 } else {
                     //handle wrong password
                     session_start();
                     $_SESSION['[password_err'] = 'Wrong password!';
-                    header('Location: ' . URL . 'Login');
+                    //header('Location: ' . URL . 'Login');
                 }
             } else {
                 //handle no user found
                 session_start();
                 $_SESSION['username_err'] = 'Username was not found!';
-                header('Location: ' . URL . 'Login');
+                //header('Location: ' . URL . 'Login');
             }
         }
     }
