@@ -1,9 +1,11 @@
+drop table login_info
+/
 create table login_info
-(  username varchar2(100) not null,
+( 
+   id_medic varchar2(100) not null primary key,
+   username varchar2(100) not null,
    user_pass varchar2(100) not null
 )
-/
-drop table login_info
 /
 
 
@@ -22,7 +24,7 @@ begin
    for c1_record in c1 loop
       v_uname := c1_record.prenume||'.'||c1_record.nume;
       v_upass := c1_record.nume||'.'||c1_record.id_medic;
-      insert into login_info (username, user_pass) values (v_uname, v_upass);
+      insert into login_info (id_medic, username, user_pass) values (c1_record.id_medic, v_uname, v_upass);
     end loop;
    
 end;
@@ -31,4 +33,7 @@ end;
 exec info;
 
 select * from login_info;
+
+select * from medici;
+
 
