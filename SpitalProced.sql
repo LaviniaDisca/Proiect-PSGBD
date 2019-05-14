@@ -33,7 +33,7 @@ end;
 exec info;
 /
 
-create or replace procedure getLoginInfo(c1 OUT SYS_REFCURSOR, IN_username login_info.username%type, IN_password login_info.user_pass%type) is
+create or replace procedure getLoginInfo(c1 OUT SYS_REFCURSOR, IN_username IN login_info.username%type, IN_password IN login_info.user_pass%type) is
 
 begin
 
@@ -41,6 +41,40 @@ begin
    SELECT * FROM login_info where username = IN_username  and user_pass = IN_password;
  
 end;
+
+/
+--afisarea pacientilor care sufera de o anumita boala
+
+create or replace procedure getPacientsSuffDisease(c1 OUT SYS_REFCURSOR, IN_boala IN fisa_pacienti.boala%type )
+is
+begin
+
+   open c1 for
+   SELECT p.* FROM pacienti p join fisa_pacienti f on p.id_pacient=f.id_pacient where f.boala = IN_boala ;
+ 
+end;
+
+
+--afisarea pacientilor care se afla sub tratament la un moment dat
+
+ALTER TABLE tratamente
+    RENAME COLUMN durata TO data_sfarsit_tratament; -- to match the database!!!!!
+    
+    
+create or replace procedure getPacientsStillTreated(c1 OUT SYS_REFCURSOR)
+is
+begin
+
+   open c1 for
+   SELECT p.* FROM pacienti p join tratamente t on p.id_pacient=t.id_pacient where sysdate <t.data_sfarsit_tratament  ;
+ 
+end;
+
+
+/
+select * from tratamente;
+/
+update tratamente set durata=durata-data_inceput_tratament;
 
 
 select * from login_info where id_medic='MD599';
