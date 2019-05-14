@@ -21,12 +21,12 @@
         <div class="inset">
             <p>
                 <label for="userName">USER NAME</label>
-                <input type="text" placeholder="User Name" required/>
+                <input type="text" placeholder="User Name" name="username" required/>
                 <span class="help-block"><?php echo $data['name']; ?></span>
             </p>
             <p>
                 <label for="password">PASSWORD</label>
-                <input type="password" placeholder="password" required/>
+                <input type="password" placeholder="password" name="password" required/>
                 <span class="help-block"><?php echo $data['pass']; ?></span>
             </p>
             <p>

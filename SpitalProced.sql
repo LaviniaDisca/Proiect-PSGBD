@@ -31,8 +31,19 @@ end;
 
 /
 exec info;
+/
 
-select * from login_info;
+create or replace procedure getLoginInfo(c1 OUT SYS_REFCURSOR, IN_username login_info.username%type, IN_password login_info.user_pass%type) is
+
+begin
+
+   open c1 for
+   SELECT * FROM login_info where username = IN_username  and user_pass = IN_password;
+ 
+end;
+
+
+select * from login_info where id_medic='MD599';
 
 select * from medici;
 
