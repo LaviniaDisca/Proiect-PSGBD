@@ -1,11 +1,10 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
 <html>
 <head>
     <meta charset="utf-8">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
     <link type="text/css" rel="stylesheet" href="http://localhost/PSGBD/public/css/Login-style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +16,9 @@
 <body>
 <div class="main">
     <form action="<?php echo URL ?>Login/signIn" method="post">
-        <h1><span>Employer</span> <lable> Login </lable> </h1>
+        <h1><span>Employer</span>
+            <lable> Login</lable>
+        </h1>
         <div class="inset">
             <p>
                 <label for="userName">USER NAME</label>

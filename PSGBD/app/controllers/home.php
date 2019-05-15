@@ -2,8 +2,11 @@
 
 class Home extends Controller
 {
+
     public function index()
     {
-        $this->view('Home/index');
+        $data['username']=$this->getUsername();
+        $this->view('Home/index',$data);
+
     }
 }

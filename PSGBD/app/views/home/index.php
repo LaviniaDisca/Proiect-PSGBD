@@ -1,86 +1,79 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <title>Bootstrap Example</title>
     <meta charset="utf-8">
-
-    <link type="text/css" rel="stylesheet" href="http://localhost/PSGBD/public/css/Home-style.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--webfonts-->
-    <link href="<spring:url value='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text.css'/>"/>
-    <!--//webfonts-->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="http://localhost/PSGBD/public/css/Home-style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-
-
-<div class="nav-side-menu">
-    <div class="brand">
-        Hopkins Hospital
+<div class="content">
+    <div class="colors">
+        <a class="default" href="javascript:void(0)"></a>
+        <a class="blue" href="javascript:void(0)"></a>
+        <a class="green" href="javascript:void(0)"></a>
+        <a class="red" href="javascript:void(0)"></a>
+        <a class="white" href="javascript:void(0)"></a>
+        <a class="black" href="javascript:void(0)"></a>
     </div>
-    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-    <div class="menu-list">
-
-        <ul id="menu-content" class="menu-content collapse out">
-            <li>
-                <a href="#">
-                    <i class="fa fa-dashboard fa-lg"></i> Dashboard
-                </a>
+    <div id="jquery-accordion-menu" class="jquery-accordion-menu">
+        <div class="jquery-accordion-menu-header">Hopkins Hospital</div>
+        <ul>
+            <li class="active"><a href="#"><i class="fa fa-home"></i>Home </a></li>
+            <li><a href="#"><i class="fa fa-user-md"></i>Doctors </a>
+                <ul class="submenu">
+                    <li><a href="#">Shifts </a></li>
+                    <li><a href="#">Hire </a></li>
+                    <li><a href="#">Fire </a></li>
+                    <li><a href="#">Book an OR </a></li>
+                </ul>
+            <li><a href="#"><i class="fa fa-address-card"></i>Wards</a><span
+                        class="jquery-accordion-menu-label">20 </span></li>
+            <li><a href="#"><i class="fa fa-users"></i>Pacients </a>
+                <ul class="submenu">
+                    <li><a href="#">Pacient file</a></li>
+                    <li><a href="#">Add</a></li>
+                    <li><a href="#">Discharge</a></li>
+                    <li><a href="#">Under treatment </a></li>
+                    <li><a href="#">Ordered by age </a></li>
+                    <li><a href="#">Find by the assigned doctor</a></li>
+                    <li><a href="#">Get number of hospitalizations</a></li>
+                </ul>
             </li>
-
-            <li  data-toggle="collapse" data-target="#products" class="collapsed active">
-                <a href="#"><i class="fa fa-gift fa-lg"></i> UI Elements <span class="arrow"></span></a>
+            <li><a href="#"><i class="fa fa-bed"></i>Rooms</a>
+                <ul class="submenu">
+                    <li><a href="#">Available rooms by ward</a></li>
+                    <li><a href="#">Occupied </a></li>
+                </ul>
             </li>
-            <ul class="sub-menu collapse" id="products">
-                <li class="active"><a href="#">CSS3 Animation</a></li>
-                <li><a href="#">General</a></li>
-                <li><a href="#">Buttons</a></li>
-                <li><a href="#">Tabs & Accordions</a></li>
-                <li><a href="#">Typography</a></li>
-                <li><a href="#">FontAwesome</a></li>
-                <li><a href="#">Slider</a></li>
-                <li><a href="#">Panels</a></li>
-                <li><a href="#">Widgets</a></li>
-                <li><a href="#">Bootstrap Model</a></li>
-            </ul>
-
-
-            <li data-toggle="collapse" data-target="#service" class="collapsed">
-                <a href="#"><i class="fa fa-globe fa-lg"></i> Services <span class="arrow"></span></a>
+            <li><a href="#"><i class="fa fa-suitcase"></i>Portfolio </a>
+                <ul class="submenu">
+                    <li><a href="#">Web Design </a></li>
+                    <li><a href="#">Graphics </a><span class="jquery-accordion-menu-label">10 </span></li>
+                    <li><a href="#">Photoshop </a></li>
+                    <li><a href="#">Programming </a></li>
+                </ul>
             </li>
-            <ul class="sub-menu collapse" id="service">
-                <li>New Service 1</li>
-                <li>New Service 2</li>
-                <li>New Service 3</li>
-            </ul>
-
-
-            <li data-toggle="collapse" data-target="#new" class="collapsed">
-                <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
-            </li>
-            <ul class="sub-menu collapse" id="new">
-                <li>New New 1</li>
-                <li>New New 2</li>
-                <li>New New 3</li>
-            </ul>
-
-
-            <li>
-                <a href="#">
-                    <i class="fa fa-user fa-lg"></i> Profile
-                </a>
-            </li>
-
-            <li>
-                <a href="#">
-                    <i class="fa fa-users fa-lg"></i> Users
-                </a>
-            </li>
+            <li><a href="#"><i class="fa fa-user"></i>About </a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
         </ul>
+        <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
+<div class="main">
+    <div class="logo"></div>
+    <div class="welcomeMsg">Welcome, <?php echo $data['username']; ?></div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="http://localhost/PSGBD/public/js/Home.js"></script>
+</body>
+</html>

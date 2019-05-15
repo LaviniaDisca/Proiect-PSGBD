@@ -11,12 +11,12 @@ class Login extends Controller
             $data['name'] = '';
         }
         unset($_SESSION['username_err']);
-        if (isset($_SESSION['[password_err'])) {
+        if (isset($_SESSION['password_err'])) {
             $data['pass'] = $_SESSION['[password_err'];
         } else {
             $data['pass'] = '';
         }
-        unset($_SESSION['[password_err']);
+        unset($_SESSION['password_err']);
         $this->view('Login/index', $data);
     }
 
@@ -43,7 +43,7 @@ class Login extends Controller
                 } else {
                     //handle wrong password
                     session_start();
-                    $_SESSION['[password_err'] = 'Wrong password!';
+                    $_SESSION['password_err'] = 'Wrong password!';
                     header('Location: ' . URL . 'Login');
                 }
             } else {
