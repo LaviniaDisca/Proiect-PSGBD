@@ -36,7 +36,7 @@
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="#"><i class="fa fa-address-card"></i>Wards</a><span
-                        class="jquery-accordion-menu-label">20 </span></li>
+                    class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-users"></i>Pacients </a>
                 <ul class="submenu">
                     <li><a href="#">Pacient file</a></li>
@@ -69,8 +69,30 @@
     </div>
 </div>
 <div class="main">
-    <div class="logoHome"></div>
-    <div class="welcomeMsg">Welcome, <?php echo $data['username']; ?></div>
+    <div class="logoHS"></div>
+    <div class="DocMsg">In spital sunt angajati <?php
+        echo ($data['num']."\n");
+        ?> medici.</div>
+    <div class="Med">
+        <div class="DocTbl">Medicii atribuiti fiecarei sectii.</div>
+        <table class="table table-hover table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Ward Name</th>
+                <th scope="col">Nr. of Doctors</th>
+            </tr>
+            </thead>
+            <tbody>
+        <?php
+        $i=0;
+        foreach ($data['specs'] as $spec){
+            echo ("<tr><td>".$spec ."</td><td>".$data['meds'][$i]."</td></tr>");
+            $i=$i+1;
+        }
+        ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

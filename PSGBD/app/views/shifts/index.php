@@ -36,7 +36,7 @@
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="#"><i class="fa fa-address-card"></i>Wards</a><span
-                        class="jquery-accordion-menu-label">20 </span></li>
+                    class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-users"></i>Pacients </a>
                 <ul class="submenu">
                     <li><a href="#">Pacient file</a></li>
@@ -69,8 +69,15 @@
     </div>
 </div>
 <div class="main">
-    <div class="logoHome"></div>
-    <div class="welcomeMsg">Welcome, <?php echo $data['username']; ?></div>
+    <div class="DocMsg">Pagina de vizualizare/editare a turelor.</div>
+    <div class="CitireId">
+    <div class="input-group flex-nowrap">
+        <input type="text" class="form-control" placeholder="Id" aria-label="Id" aria-describedby="addon-wrapping">
+
+    </div>
+        <button type="button" class="btn btn-dark">Vizualizare</button>
+        <button type="button" class="btn btn-secondary">Editare</button>
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -20,6 +20,7 @@ class Controller
         }
         $user_model = $this->loadModel('UserModel');
         $result = $user_model->getUsername($_SESSION["userID"]);
+        $num=$user_model->getNum();
         $username = $result[0].' '.$result[1].'!';
         return $username;
     }

@@ -100,7 +100,26 @@ begin
  
 end;
 
+/
+create or replace procedure getDoctorNum(c1 OUT SYS_REFCURSOR)
+is
+begin
 
+   open c1 for
+   SELECT count(*) as "num" FROM medici ;
+ 
+end;
+/
+
+create or replace procedure getDoctorsbySpec(c1 OUT SYS_REFCURSOR)
+is
+begin
+
+   open c1 for
+   SELECT  s.nume_sectie as "sect", count(m.id_medic) as "med" FROM medici m join detalii_medic d on d.id_medic=m.id_medic join sectii s on d.id_sectie=s.id_sectie
+   group by d.id_sectie, s.nume_sectie order by 1;
+ 
+end;
 
 
 

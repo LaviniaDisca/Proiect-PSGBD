@@ -12,8 +12,10 @@ body {
 .content {
     width: 260px;
     margin-left: 0px;
-
+    position: fixed;
 }
+
+
 
 .colors {
     width: 260px;
@@ -346,24 +348,70 @@ body {
 }
 
 
+
+
+
 .main{
     margin-top:0px;
     margin-left:0px;
     height:100%;
 }
 
+
+.Med{
+    margin-top: 50px;
+    margin-left: 500px;
+    width:600px;
+
+}
+
+
 .welcomeMsg{
     margin-left: 600px;
     font-size: xx-large;
     font-family: "Lucida Calligraphy";
-    margin-top: 100px;
+    margin-top: 200px;
+
+}
+.DocMsg{
+    margin-left: 400px;
+    font-size: xx-large;
+    font-family: "Lucida Calligraphy";
+    margin-top: 0px;
 
 }
 
-.logo{
+.DocTbl{
+    margin-left: 0px;
+    font-size: xx-large;
+    font-family: "Lucida Calligraphy";
+    width:600px;
+
+}
+
+.CitireId{
+
+    width:300px;
+    margin-left: 600px;
+    margin-top: 50px;
+
+
+}
+
+
+.logoHS{
     background-image: url(../images/logo2.png);
     height: 200px;
     width:200px;
     margin-left:87%;
+    position: absolute;
+}
+
+.logoHome{
+    background-image: url(../images/logo2.png);
+    height: 200px;
+    width:200px;
+    margin-left:87%;
+
 }
 
