@@ -59,14 +59,8 @@ begin
    SELECT p.* FROM pacienti p join fisa_pacienti f on p.id_pacient=f.id_pacient where f.boala = IN_boala ;
  
 end;
+/
 
-
---afisarea pacientilor care se afla sub tratament la un moment dat
-
-ALTER TABLE tratamente
-    RENAME COLUMN durata TO data_sfarsit_tratament; -- to match the database!!!!!
-    
-    
 create or replace procedure getPacientsStillTreated(c1 OUT SYS_REFCURSOR)
 is
 begin
@@ -80,12 +74,12 @@ end;
 /
 select * from tratamente;
 /
-update tratamente set durata=durata-data_inceput_tratament;
+--update tratamente set durata=durata-data_inceput_tratament;
 
 
 select * from login_info where id_medic='MD599';
 
-select * from medici;
+select * from pacienti;
 
 
 --display doctor's name
@@ -120,6 +114,19 @@ begin
    group by d.id_sectie, s.nume_sectie order by 1;
  
 end;
+/
+
+
+--
+
+
+
+
+
+
+
+
+
 
 
 

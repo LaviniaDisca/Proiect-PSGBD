@@ -6,12 +6,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Hopkins Hospital</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="http://localhost/PSGBD/public/css/Home-style.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo URL ?>public/css/Home-style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 
 <body>
@@ -27,20 +29,23 @@
     <div id="jquery-accordion-menu" class="jquery-accordion-menu">
         <div class="jquery-accordion-menu-header">Hopkins Hospital</div>
         <ul>
-            <li class="active"><a href="http://localhost/PSGBD/Home"><i class="fa fa-home"></i>Home </a></li>
-            <li><a href="http://localhost/PSGBD/Doctors"><i class="fa fa-user-md"></i>Doctors </a>
+            <li class="active"><a href="<?php echo URL ?>Home"><i class="fa fa-home"></i>Home </a></li>
+            <li><a href="<?php echo URL ?>Doctors"><i class="fa fa-user-md"></i>Doctors </a>
                 <ul class="submenu">
-                    <li><a href="http://localhost/PSGBD/Shifts">Shifts </a></li>
+                    <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
                     <li><a href="#">Hire </a></li>
                     <li><a href="#">Fire </a></li>
                     <li><a href="#">Book an OR </a></li>
                 </ul>
-            <li><a href="#"><i class="fa fa-address-card"></i>Wards</a><span
-                    class="jquery-accordion-menu-label">20 </span></li>
-            <li><a href="#"><i class="fa fa-users"></i>Pacients </a>
+            <li><a href="#"><i class="fa fa-procedures"></i>Wards</a><span
+                        class="jquery-accordion-menu-label">20 </span></li>
+            <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
-                    <li><a href="#">Pacient file</a></li>
-                    <li><a href="#">Add</a></li>
+                    <li><a href="#">Patient file</a></li>
+                    <li><a href="#">Add patient</a></li>
+                    <li><a href="#">Assign a room to a patient</a></li>
+                    <li><a href="#">Hospitalize a patient</a></li>
+                    <li><a href="#">Assign a treatment</a></li>
                     <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
@@ -54,12 +59,10 @@
                     <li><a href="#">Occupied </a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="fa fa-suitcase"></i>Portfolio </a>
+            <li><a href="#"><i class="fa fa-pills"></i>Meds</a>
                 <ul class="submenu">
-                    <li><a href="#">Web Design </a></li>
-                    <li><a href="#">Graphics </a><span class="jquery-accordion-menu-label">10 </span></li>
-                    <li><a href="#">Photoshop </a></li>
-                    <li><a href="#">Programming </a></li>
+                    <li><a href="#">Add a med </a></li>
+                    <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
             <li><a href="#"><i class="fa fa-user"></i>About </a></li>
@@ -71,8 +74,9 @@
 <div class="main">
     <div class="logoHS"></div>
     <div class="DocMsg">In spital sunt angajati <?php
-        echo ($data['num']."\n");
-        ?> medici.</div>
+        echo($data['num'] . "\n");
+        ?> medici.
+    </div>
     <div class="Med">
         <div class="DocTbl">Medicii atribuiti fiecarei sectii.</div>
         <table class="table table-hover table-dark">
@@ -83,13 +87,13 @@
             </tr>
             </thead>
             <tbody>
-        <?php
-        $i=0;
-        foreach ($data['specs'] as $spec){
-            echo ("<tr><td>".$spec ."</td><td>".$data['meds'][$i]."</td></tr>");
-            $i=$i+1;
-        }
-        ?>
+            <?php
+            $i = 0;
+            foreach ($data['specs'] as $spec) {
+                echo("<tr><td>" . $spec . "</td><td>" . $data['meds'][$i] . "</td></tr>");
+                $i = $i + 1;
+            }
+            ?>
             </tbody>
         </table>
     </div>
