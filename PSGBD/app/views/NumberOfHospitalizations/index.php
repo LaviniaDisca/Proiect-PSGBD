@@ -72,15 +72,19 @@
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Pagina de vizualizare/editare a turelor.</div>
-    <div class="CitireId">
-        <div class="input-group flex-nowrap">
-            <input type="text" class="form-control" placeholder="Id" aria-label="Id" aria-describedby="addon-wrapping">
-
+    <div class="DocMsg">Introduceti ID-ul pacientului.</div>
+    <form action="<?php echo URL ?>NumberOfHospitalizations" method="post">
+        <div class="CitireId">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Patient ID" aria-label="Id"
+                       aria-describedby="addon-wrapping" name="patientID">
+            </div>
+            <button type="submit" class="btn btn-dark">See</button>
         </div>
-        <button type="button" class="btn btn-dark">Vizualizare</button>
-        <button type="button" class="btn btn-secondary">Editare</button>
-    </div>
+    </form>
+</div>
+<div class="Rez1">
+    <p><?php echo $data['num'] ?></p>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

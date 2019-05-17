@@ -116,12 +116,35 @@ begin
 end;
 /
 
+--  afisarea saloanelor libere pe fiecare sectie
 
---
+create or replace procedure getFreeSalon(c1 OUT SYS_REFCURSOR)
+is
+begin
+
+   open c1 for
+   SELECT  s.nume_sectie as "sect", count(apac.id_pacient) as "nb" FROM sectii s join asignare_salon sig on s.id_sectie=sig.id_sectie join saloane sl on sl.id_salon=sig.id_salon 
+                                                                join atribuire_pacient apac on apac.id_salon=sl.id_salon      
+   where sig.id_salon=apac.id_salon                                                        
+   group by s.nume_sectie,apac.id_pacient
+   having count(apac.id_pacient) <= sl.capacitate;
+end;
+
+--   afisarea numarului de internari a unui pacient
+
+create or replace procedure getNbHospitalizations(c1 OUT SYS_REFCURSOR,IN_id_pacient IN pacienti.id_pacient%type)
+is
+begin
+
+   open c1 for
+   SELECT  count(s.id_internare) as "numInternari" FROM spitalizare s
+   where s.id_pacient = IN_id_pacient
+   group by s.id_internare;
+ 
+end;
 
 
-
-
+select * from pacienti;
 
 
 

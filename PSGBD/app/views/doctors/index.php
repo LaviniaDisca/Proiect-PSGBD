@@ -50,12 +50,12 @@
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
                     <li><a href="#">Find by the assigned doctor</a></li>
-                    <li><a href="#">Get number of hospitalizations</a></li>
+                    <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
             <li><a href="#"><i class="fa fa-bed"></i>Rooms</a>
                 <ul class="submenu">
-                    <li><a href="#">Available rooms by ward</a></li>
+                    <li><a href="<?php echo URL ?>FreeRooms">Available rooms by ward</a></li>
                     <li><a href="#">Occupied </a></li>
                 </ul>
             </li>
