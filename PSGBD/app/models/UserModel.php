@@ -78,6 +78,35 @@ class UserModel extends Model
         return $result;
     }
 
+    public function getShifts($medID)
+    {
+        $result = array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin getShifts(:cursor,:id); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_bind_by_name($statement, ":id", $medID, -1, SQLT_CHR);
+        oci_execute($statement);
+        oci_execute($c1);  // Execute the REF CURSOR like a normal statement id
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['Id_med'], $row['nume'], $row['prenume'], $row['inceput'], $row['sfarsit']);
+        }
+        return $result;
+    }
+
+    public function updateShift($medId, $in, $sf)
+    {
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin getShifts(:cursor,:id, :inc, :sf); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_bind_by_name($statement, ":id", $medId, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":inc", $in, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":sf", $sf, -1, SQLT_CHR);
+        oci_execute($statement);
+        oci_execute($c1);
+
+    }
+
+
     public function getFreeRooms()
     {
         $result = array();

@@ -38,7 +38,7 @@
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="#"><i class="fa fa-procedures"></i>Wards</a><span
-                        class="jquery-accordion-menu-label">20 </span></li>
+                    class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
@@ -75,19 +75,39 @@
     <div class="DocMsg">Pagina de vizualizare/editare a turelor.</div>
     <form action="<?php echo URL ?>Shifts/Editare" method="post">
         <form action="<?php echo URL ?>Shifts/Vizualizare" method="post">
-        <div class="CitireId">
+            <div class="CitireId">
 
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Id" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
-            </div>
-
-            <button type="submit" class="btn btn-dark">Vizualizare</button>
+                <div class="input-group flex-nowrap">
+                    <input type="text" class="form-control" placeholder="Id" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
+                </div>
+                <button type="submit" class="btn btn-dark">Vizualizare</button>
         </form>
         <button type="submit" class="btn btn-statement">Editare</button>
-     </form>
-    </div>
+    </form>
+</div>
+</div>
 
-    </div>
+<div> <?php
+
+        echo "<div class=\"Med\">
+        <div class=\"DocTbl\">Mediciul cu id-ul ".$data['id_med'].":</div>
+        <table class=\"table table-hover table-dark\">
+            <thead>
+            <tr>
+                <th scope=\"col\">Id</th>
+                <th scope=\"col\">Name</th>
+                <th scope=\"col\">Shift</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>".$data['id_med']."</td><td>".$data['name']."</td><td>".$data['shift']."</td></tr>
+            </tbody>";
+
+
+    ?>
+
+</div>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="http://localhost/PSGBD/public/js/Home.js"></script>
