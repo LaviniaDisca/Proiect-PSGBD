@@ -33,7 +33,7 @@
             <li><a href="<?php echo URL ?>Doctors"><i class="fa fa-user-md"></i>Doctors </a>
                 <ul class="submenu">
                     <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
-                    <li><a href="#">Hire </a></li>
+                    <li><a href="<?php echo URL ?>Hire">Hire </a></li>
                     <li><a href="#">Fire </a></li>
                     <li><a href="#">Book an OR </a></li>
                 </ul>

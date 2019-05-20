@@ -147,6 +147,58 @@ end;
 select * from pacienti;
 
 
+/
+create or replace procedure getShifts(c1 OUT SYS_REFCURSOR,IN_id IN medici.id_medic%type)
+is
+begin
+
+   open c1 for
+   SELECT  med.id_medic as "Id_med", med.nume as "nume", med.prenume as "prenume",s.inceput_tura as "inceput", s.sfarsit_tura as "sfarsit" 
+   FROM medici med join detalii_medic s on s.id_medic=med.id_medic
+   where med.id_medic = IN_id ;
+ 
+end;
+/
+
+create or replace procedure updateShifts(IN_id IN detalii_medic.id_medic%type, IN_inceput IN detalii_medic.inceput_tura%TYPE, IN_sfarsit IN detalii_medic.sfarsit_tura%TYPE )
+is
+begin
+   UPDATE detalii_medic
+   set inceput_tura =  IN_inceput,
+   sfarsit_tura = IN_sfarsit
+   where id_medic = IN_id ;
+ 
+end;
+/
+
+create or replace procedure geNextMedId(c1 OUT SYS_REFCURSOR)
+is 
+begin
+    open c1 for
+    select 'MD'||(to_char(to_number(substr(med.id_medic,3))+1)) as "new_id" from medici med
+    group by med.id_medic
+    having to_number(substr(med.id_medic,3))=(select max(to_number(substr(med1.id_medic,3))) from medici med1);
+end;
+
+/
+
+create or replace procedure getWardId(c1 OUT SYS_REFCURSOR, IN_name in sectii.nume_sectie%TYPE)
+is 
+begin
+    open c1 for
+    select id_sectie as "id" from sectii where nume_sectie=IN_name;
+end;
+
+/
+create or replace procedure AddMEd (IN_id IN medici.id_medic%TYPE, IN_nume IN medici.nume%TYPE, IN_prenume IN medici.prenume%TYPE, 
+IN_sectie in detalii_medic.id_sectie%TYPE, IN_inceput IN detalii_medic.inceput_tura%TYPE, IN_sfarsit IN detalii_medic.sfarsit_tura%TYPE )
+is
+begin
+
+insert into medici (id_medic, nume, prenume) values (IN_id, IN_nume, IN_prenume);
+insert into detalii_medic(id_medic, id_sectie, inceput_tura, sfarsit_tura) values (IN_id, IN_sectie, IN_inceput, IN_sfarsit);
+
+end;
 
 
 

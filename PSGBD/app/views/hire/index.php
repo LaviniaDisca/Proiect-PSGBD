@@ -72,40 +72,29 @@
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Pagina de vizualizare/editare a turelor.</div>
+    <div class="DocMsg">Pagina de adaugare medic in baza de date.</div>
 
-    <form action="<?php echo URL ?>Shifts/Actiune" method="post">
+    <form action="<?php echo URL ?>Hire/Adaugare" method="post">
         <div class="CitireId">
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Id" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="Nume" aria-label="last-name" name="last-name" aria-describedby="addon-wrapping">
             </div>
-
-            <input type="submit" name="actiune" value="Vizualizare">
-            <input type="submit" name="actiune" value="Editare">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Prenume" aria-label="first-name" name="first-name" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Inceput tura" aria-label="begin" name="begin" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Sfarsit tura" aria-label="end" name="end" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Sectia" aria-label="ward" name="ward" aria-describedby="addon-wrapping">
+            </div>
+            <button type="submit" class="btn btn-dark">Adaugare</button>
         </div>
     </form>
 
-
-<div> <?php
-
-        echo "<div class=\"Med\">
-        <div class=\"DocTbl\">Mediciul cu id-ul ".$data['id_med'].":</div>
-        <table class=\"table table-hover table-dark\">
-            <thead>
-            <tr>
-                <th scope=\"col\">Id</th>
-                <th scope=\"col\">Name</th>
-                <th scope=\"col\">Shift</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr><td>".$data['id_med']."</td><td>".$data['name']."</td><td>".$data['shift']."</td></tr>
-            </tbody>";
-
-
-    ?>
-
-</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

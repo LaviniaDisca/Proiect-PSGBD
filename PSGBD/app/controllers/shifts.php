@@ -14,7 +14,7 @@ class Shifts extends Controller
         $this->view('shifts/index', $data);
 
     }
-    
+
     public function Actiune()
     {
         $data= array();
@@ -35,7 +35,15 @@ class Shifts extends Controller
             $this->view('shifts/editare', $data);
 
         }
+        else if($_POST['actiune']=='Modificare')
+        {
+            $inceput=$_POST['new_start'];
+            $sfarsit=$_POST['new_end'];
+            $user_model->updateShift($id, $inceput, $sfarsit);
+            $this->view('shifts/succes', $data);
+        }
     }
+
 
 
 

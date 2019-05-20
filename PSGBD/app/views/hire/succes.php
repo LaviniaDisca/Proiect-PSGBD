@@ -42,7 +42,7 @@
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
-                    <li><a href="#">Add patient</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
@@ -65,47 +65,15 @@
                     <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="fa fa-user"></i>About </a></li>
+            <li><a href="<?php echo URL?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
             <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
         </ul>
         <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Pagina de vizualizare/editare a turelor.</div>
-
-    <form action="<?php echo URL ?>Shifts/Actiune" method="post">
-        <div class="CitireId">
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Id" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
-            </div>
-
-            <input type="submit" name="actiune" value="Vizualizare">
-            <input type="submit" name="actiune" value="Editare">
-        </div>
-    </form>
-
-
-<div> <?php
-
-        echo "<div class=\"Med\">
-        <div class=\"DocTbl\">Mediciul cu id-ul ".$data['id_med'].":</div>
-        <table class=\"table table-hover table-dark\">
-            <thead>
-            <tr>
-                <th scope=\"col\">Id</th>
-                <th scope=\"col\">Name</th>
-                <th scope=\"col\">Shift</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr><td>".$data['id_med']."</td><td>".$data['name']."</td><td>".$data['shift']."</td></tr>
-            </tbody>";
-
-
-    ?>
-
-</div>
+    <div class="logoHome"></div>
+    <div class="welcomeMsg">Medic adaugat!</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
