@@ -73,19 +73,17 @@
 </div>
 <div class="main">
     <div class="DocMsg">Pagina de vizualizare/editare a turelor.</div>
-    <form action="<?php echo URL ?>Shifts/Editare" method="post">
-        <form action="<?php echo URL ?>Shifts/Vizualizare" method="post">
-        <div class="CitireId">
 
+    <form action="<?php echo URL ?>Shifts/Actiune" method="post">
+        <div class="CitireId">
             <div class="input-group flex-nowrap">
                 <input type="text" class="form-control" placeholder="Id" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
             </div>
 
-            <button type="submit" class="btn btn-dark">Vizualizare</button>
-        </form>
-        <button type="submit" class="btn btn-statement">Editare</button>
-     </form>
+            <input type="submit" name="actiune" value="Vizualizare">
+    <input type="submit" name="actiune" value="Editare">
     </div>
+    </form>
 
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -14,22 +14,8 @@ class Shifts extends Controller
         $this->view('shifts/index', $data);
 
     }
-
-    public function Vizualizare()
-    {
-        $data= array();
-        if($_POST['Id'])
-        {
-            $id=$_POST['Id'];
-            $user_model = $this->loadModel('UserModel');
-            $data['id_med']=$user_model->getShifts($id)[0];
-            $data['name']=$user_model->getShifts($id)[1]." ".$user_model->getShifts($id)[2];
-            $data['shift']=$user_model->getShifts($id)[3]."-".$user_model->getShifts($id)[4];
-        }
-        $this->view('shifts/vizualizare', $data);
-    }
-
-    public function Editare()
+    
+    public function Actiune()
     {
         $data= array();
         if($_POST['Id'])
@@ -41,9 +27,17 @@ class Shifts extends Controller
             $data['shift']=$user_model->getShifts($id)[3]."-".$user_model->getShifts($id)[4];
         }
 
+        if($_POST['actiune']=='Vizualizare') {
+            $this->view('shifts/vizualizare', $data);
+        }
+        else if ($_POST['actiune']=='Editare')
+        {
+            $this->view('shifts/editare', $data);
 
-        $this->view('shifts/editare', $data);
+        }
     }
+
+
 
 
 }
