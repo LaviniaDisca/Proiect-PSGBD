@@ -50,7 +50,7 @@
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
-                    <li><a href="#">Discharge</a></li>
+                    <li><a href="<?php echo URL ?>DischargePatient">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
                     <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="form-group">
                         <span class="form-label">Date of Birth</span>
-                        <input class="form-control" placeholder="Enter Date of Birth Here.." type="date" data-date="" data-date-format="DD MM YYYY" name="birth_date" value="2015-08-09" required >
+                        <input class="form-control" placeholder="Enter Date of Birth Here.." type="date"  name="birth_date"  required >
                     </div>
                     <div class="form-group">
                         <span class="form-label">Cause/Disease</span>

@@ -50,7 +50,7 @@
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
-                    <li><a href="#">Discharge</a></li>
+                    <li><a href="<?php echo URL ?>DischargePatient">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
                     <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>

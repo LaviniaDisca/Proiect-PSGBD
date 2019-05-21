@@ -31,14 +31,21 @@ class PatientModel extends Model
 
     public function addPatient($id, $last_name, $first_name, $birth_date, $disease, $file)
     {
-
-        $statement = oci_parse($this->database, "begin AddPatient( :id, :nume, :prenume, :birth_date, :disease, :file); end;");
+        $statement = oci_parse($this->database, "begin AddPatient(:id, :nume, :prenume, :birth_date, :disease, :file); end;");
         oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
         oci_bind_by_name($statement, ":nume", $last_name, -1, SQLT_CHR);
         oci_bind_by_name($statement, ":prenume", $first_name, -1, SQLT_CHR);
         oci_bind_by_name($statement, ":birth_date", $birth_date, -1, SQLT_CHR);
         oci_bind_by_name($statement, ":disease", $disease, -1, SQLT_CHR);
         oci_bind_by_name($statement, ":file", $file, -1, SQLT_CHR);
+        oci_execute($statement);
+    }
+
+
+    public function deletePatient($id)
+    {
+        $statement = oci_parse($this->database, "begin dischargePatient(:id); end;");
+        oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
         oci_execute($statement);
     }
 

@@ -38,7 +38,7 @@
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="<?php echo URL ?>Wards"><i class="fa fa-procedures"></i>Wards</a><span
-                        class="jquery-accordion-menu-label">20 </span></li>
+                    class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
@@ -65,15 +65,25 @@
                     <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
-            <li><a href="<?php echo URL?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
+            <li><a href="#"><i class="fa fa-user"></i>About </a></li>
             <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
         </ul>
         <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">
-    <div class="logoHome"></div>
-    <div class="welcomeMsg">Welcome, <?php echo $data['username']; ?></div>
+    <div class="DocMsg">Pagina de stergere a unui pacient.</div>
+
+    <form action="<?php echo URL ?>DischargePatient/Discharge" method="post">
+        <div class="CitireId">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Patient ID" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Stergere</button>
+        </div>
+    </form>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

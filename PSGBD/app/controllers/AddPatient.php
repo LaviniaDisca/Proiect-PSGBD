@@ -17,6 +17,7 @@ class AddPatient extends Controller
         $patient_id = $user_model->getNextPatientId()[0];
         $file_id = $user_model->getNextPatientFileId()[0];
         $birth_date = $_POST['birth_date'];
+        $birth_date = date('d-M-Y', strtotime($birth_date));
         $disease = $_POST['disease'];
         $user_model->addPatient($patient_id, $nume, $prenume, $birth_date, $disease, $file_id);
         $this->view('AddPatient/succes');

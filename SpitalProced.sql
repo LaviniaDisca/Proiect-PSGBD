@@ -209,6 +209,7 @@ end;
 create or replace procedure AddPatient (IN_id IN pacienti.id_pacient%TYPE, IN_nume IN pacienti.nume%TYPE, IN_prenume IN pacienti.prenume%TYPE, 
 IN_data_nastere in pacienti.data_nastere%TYPE, IN_boala in fisa_pacienti.boala%type, IN_fisa in fisa_pacienti.id_fisa%type)
 is
+
 begin
 
 insert into pacienti (id_pacient, nume, prenume, data_nastere) values (IN_id, IN_nume, IN_prenume, IN_data_nastere);
@@ -241,7 +242,15 @@ ADD CONSTRAINT fk_tratamente_id_medic FOREIGN KEY (id_medic) REFERENCES medici(i
 end;
 /
 
+create or replace procedure dischargePatient(IN_id IN pacienti.id_pacient%TYPE)
+is
+begin
+        
+delete from pacienti where id_pacient = IN_id;
+delete from fisa_pacienti where id_pacient = IN_id;
 
+end;
+/
 
 
 -- afisarea saloanelor libere pe o sectie

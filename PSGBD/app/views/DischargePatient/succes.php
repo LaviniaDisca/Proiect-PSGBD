@@ -38,7 +38,7 @@
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="<?php echo URL ?>Wards"><i class="fa fa-procedures"></i>Wards</a><span
-                        class="jquery-accordion-menu-label">20 </span></li>
+                    class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
@@ -73,7 +73,7 @@
 </div>
 <div class="main">
     <div class="logoHome"></div>
-    <div class="welcomeMsg">Welcome, <?php echo $data['username']; ?></div>
+    <div class="welcomeMsg">Pacient sters!</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
