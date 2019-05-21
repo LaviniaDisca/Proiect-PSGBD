@@ -42,7 +42,7 @@
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
-                    <li><a href="#">Add patient</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
@@ -89,7 +89,7 @@
 <div> <?php
 
         echo "<div class=\"Med\">
-        <div class=\"DocTbl\">Mediciul cu id-ul ".$data['id_med'].":</div>
+        <div class=\"DocTbl\">Medicul cu id-ul ".$data['id_med'].":</div>
         <table class=\"table table-hover table-dark\">
             <thead>
             <tr>

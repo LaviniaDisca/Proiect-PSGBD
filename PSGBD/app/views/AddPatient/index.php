@@ -46,7 +46,7 @@
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
-                    <li><a href="#">Add patient</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
@@ -80,7 +80,7 @@
     <h1 class="well">Registration Form</h1>
     <div class="col-lg-12 well">
         <div class="row">
-            <form>
+            <form action="<?php echo URL ?>AddPatient" method="post">
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-6 form-group">
@@ -132,7 +132,7 @@
 <!--                        <label>Website</label>-->
 <!--                        <input type="text" placeholder="Enter Website Name Here.." class="form-control">-->
 <!--                    </div>-->
-                    <button type="button" class="btn btn-lg btn-info">Submit</button>
+                    <input type="submit" class="btn btn-lg btn-info" value="Submit">
                 </div>
             </form>
         </div>

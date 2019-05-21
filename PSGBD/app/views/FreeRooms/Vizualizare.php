@@ -33,7 +33,7 @@
             <li><a href="<?php echo URL ?>Doctors"><i class="fa fa-user-md"></i>Doctors </a>
                 <ul class="submenu">
                     <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
-                    <li><a href="#">Hire </a></li>
+                    <li><a href="<?php echo URL ?>Hire">Hire </a></li>
                     <li><a href="#">Fire </a></li>
                     <li><a href="#">Book an OR </a></li>
                 </ul>
@@ -72,19 +72,31 @@
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Introduceti ID-ul pacientului.</div>
-    <form action="<?php echo URL ?>NumberOfHospitalizations" method="post">
+    <form action="<?php echo URL ?>FreeRooms/See" method="post">
         <div class="CitireId">
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Patient ID" aria-label="Id"
-                       aria-describedby="addon-wrapping" name="patientID">
+                <input type="text" class="form-control" placeholder="Nume sectie" aria-label="sectie" name="sectie"
+                       aria-describedby="addon-wrapping">
             </div>
-            <button type="submit" class="btn btn-dark">See</button>
+            <input type="submit" name="actiune" value="Vizualizare">
         </div>
     </form>
-</div>
-<div class="Rez1">
-    <p><?php echo $data['num'] ?></p>
+
+    <div> <?php
+
+        echo "<div class=\"Med\">
+        <div class=\"DocTbl\">Sectia " . $data['sectie'] . " are libere saloanele:</div>
+        <table class=\"table table-hover table-dark\">
+            <thead>
+            <tr>
+                <th scope=\"col\">Salon</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><td>" . $data['room'] . "</td></tr>
+            </tbody>";
+        ?>
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

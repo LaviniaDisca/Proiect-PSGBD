@@ -116,20 +116,6 @@ begin
 end;
 /
 
---  afisarea saloanelor libere pe fiecare sectie
-
-create or replace procedure getFreeSalon(c1 OUT SYS_REFCURSOR)
-is
-begin
-
-   open c1 for
-   SELECT  s.nume_sectie as "sect", count(apac.id_pacient) as "nb" FROM sectii s join asignare_salon sig on s.id_sectie=sig.id_sectie join saloane sl on sl.id_salon=sig.id_salon 
-                                                                join atribuire_pacient apac on apac.id_salon=sl.id_salon      
-   where sig.id_salon=apac.id_salon                                                        
-   group by s.nume_sectie,apac.id_pacient
-   having count(apac.id_pacient) <= sl.capacitate;
-end;
-
 --   afisarea numarului de internari a unui pacient
 
 create or replace procedure getNbHospitalizations(c1 OUT SYS_REFCURSOR,IN_id_pacient IN pacienti.id_pacient%type)
@@ -144,7 +130,7 @@ begin
 end;
 
 
-select * from pacienti;
+select * from medici where id_medic = 'MD1000001';
 
 
 /
@@ -199,6 +185,48 @@ insert into medici (id_medic, nume, prenume) values (IN_id, IN_nume, IN_prenume)
 insert into detalii_medic(id_medic, id_sectie, inceput_tura, sfarsit_tura) values (IN_id, IN_sectie, IN_inceput, IN_sfarsit);
 
 end;
+
+/
+
+
+-- afisarea saloanelor libere pe o sectie
+
+
+create or replace procedure getFreeSalon(c1 OUT SYS_REFCURSOR, IN_name in sectii.nume_sectie%TYPE)
+is 
+begin
+    open c1 for
+   
+ select sl.id_salon as "salon"  FROM sectii s join asignare_salon sig on s.id_sectie=sig.id_sectie join saloane sl on sl.id_salon=sig.id_salon 
+                                                                join atribuire_pacient apac on apac.id_salon=sl.id_salon      
+   where s.nume_sectie = IN_name and sl.capacitate >
+   ( select count(apac2.id_pacient) from saloane sl2 join atribuire_pacient apac2 on apac2.id_salon=sl2.id_salon where sl.id_salon=sl2.id_salon  group by apac2.id_pacient )
+   order by 1;
+
+end;
+
+
+-- afisarea saloanelor ocupate pe o sectie
+
+create or replace procedure getOccupiedSalon(c1 OUT SYS_REFCURSOR, IN_name in sectii.nume_sectie%TYPE)
+is 
+begin
+    open c1 for
+   
+ select sl.id_salon as "salon"  FROM sectii s join asignare_salon sig on s.id_sectie=sig.id_sectie join saloane sl on sl.id_salon=sig.id_salon 
+                                                                join atribuire_pacient apac on apac.id_salon=sl.id_salon      
+   where s.nume_sectie = IN_name and sl.capacitate =
+   ( select count(apac2.id_pacient) from saloane sl2 join atribuire_pacient apac2 on apac2.id_salon=sl2.id_salon where sl.id_salon=sl2.id_salon  group by apac2.id_pacient )
+   order by 1;
+
+end;
+
+
+
+
+
+
+
 
 
 

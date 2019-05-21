@@ -147,18 +147,20 @@ class UserModel extends Model
     }
 
 
-    public function getFreeRooms()
+    public function getFreeRooms($sectie)
     {
         $result = array();
         $c1 = oci_new_cursor($this->database);
-        $statement = oci_parse($this->database, "begin getFreeSalon(:cursor); end;");
+        $statement = oci_parse($this->database, "begin getFreeSalon(:cursor,:sectie); end;");
         oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_bind_by_name($statement, ":sectie", $sectie, -1, SQLT_CHR);
         oci_execute($statement);
         oci_execute($c1);
         while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-            array_push($result, $row['sect'],$row['nb']);
+            array_push($result, $row['salon']);
         }
         return $result;
     }
+
 
 }

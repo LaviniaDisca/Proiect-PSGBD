@@ -5,24 +5,35 @@ class FreeRooms extends Controller
 
     public function index()
     {
+        $data = array();
+        $data['sectie'] = '';
+        $data['room'] = '';
+        $this->view('FreeRooms/index', $data);
+
+    }
+
+    public function See()
+    {
         session_start();
+        $data = array();
+        $user_model = $this->loadModel('UserModel');
         if (!isset($_SESSION["userID"])) {
             header('Location: ' . URL . 'Home');
         }
-        $user_model = $this->loadModel('UserModel');
-        $ordered=$user_model->getFreeRooms();
-        $data['specs']= array();
-        $data['room']= array();
-        $i=1;
-        foreach ($ordered as $item) {
-            if ($i % 2 == 1)
-                array_push($data['specs'], $item);
-            else
-                array_push($data['room'], $item);
-            $i=$i+1;
-        }
+        if (isset($_POST['sectie'])) {
 
-        $this->view('FreeRooms/index',$data);
+            $sectie = $_POST['sectie'];
+            $data['sectie'] = $sectie;
+            $ordered = $user_model->getFreeRooms($sectie);
+            $data['room'] = array();
+            $data['room'] = $ordered;
+        } else {
+            $data['room'] = '';
+        }
+        if ($_POST['actiune'] == 'Vizualizare') {
+
+            $this->view('FreeRooms/Vizualizare', $data);
+        }
 
     }
 }
