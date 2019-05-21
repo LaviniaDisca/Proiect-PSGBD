@@ -88,13 +88,14 @@
         <div class=\"DocTbl\">Sectia " . $data['sectie'] . " are libere saloanele:</div>
         <table class=\"table table-hover table-dark\">
             <thead>
-            <tr>
-                <th scope=\"col\">Salon</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr><td>" . $data['room'] . "</td></tr>
+            </thead>";
+        foreach ($data['room'] as $item) {
+            echo "
+            <tbody> 
+                <tr><td>" . $item . "</td></tr>
             </tbody>";
+        }
+
         ?>
     </div>
 </div>

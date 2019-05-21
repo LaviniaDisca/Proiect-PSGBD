@@ -26,7 +26,9 @@ class FreeRooms extends Controller
             $data['sectie'] = $sectie;
             $ordered = $user_model->getFreeRooms($sectie);
             $data['room'] = array();
-            $data['room'] = $ordered;
+            foreach ($ordered as $item) {
+                array_push($data['room'], $item);
+            }
         } else {
             $data['room'] = '';
         }
