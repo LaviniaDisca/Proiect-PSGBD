@@ -79,4 +79,19 @@ class PatientModel extends Model
         }
         return $result;
     }
+    public function getFisa($id)
+    {
+        $result = array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin Fisa(:cursor, :id); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['fisa'], $row['pacient'], $row['medic'], $row['boala']);
+        }
+        return $result;
+    }
+
 }

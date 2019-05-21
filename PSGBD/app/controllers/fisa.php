@@ -12,7 +12,7 @@ class Fisa extends Controller
     {
         $data=array();
         $data['id']=$_POST['Id_pac'];
-        $user_model = $this->loadModel('UserModel');
+        $user_model = $this->loadModel('PacientModel');
         $data['fisa']=$user_model->getFisa($data['id'])[0];
         $data['pacient']=$user_model->getFisa($data['id'])[1];
         $data['doctor']=$user_model->getFisa($data['id'])[2];
