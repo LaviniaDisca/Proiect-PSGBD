@@ -42,14 +42,14 @@
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="<?php echo URL ?>Fisa">Patient file</a></li>
-                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
+                    <li><a href="#">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
-                    <li><a href="<?php echo URL ?>DischargePatient">Discharge</a></li>
+                    <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
+                    <li><a href="#">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -72,26 +72,15 @@
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Pagina de adaugare medic in baza de date.</div>
+    <div class="DocMsg">Pagina de cautarea fisa de medic</div>
 
-    <form action="<?php echo URL ?>Hire/Adaugare" method="post">
+    <form action="<?php echo URL ?>Fisa/Cautare" method="post">
         <div class="CitireId">
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Nume" aria-label="last-name" name="last-name" aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="Id Pacient" aria-label="Id_pac" name="Id_pac" aria-describedby="addon-wrapping">
             </div>
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Prenume" aria-label="first-name" name="first-name" aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Inceput tura" aria-label="begin" name="begin" aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Sfarsit tura" aria-label="end" name="end" aria-describedby="addon-wrapping">
-            </div>
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Sectia" aria-label="ward" name="ward" aria-describedby="addon-wrapping">
-            </div>
-            <button type="submit" class="btn btn-dark">Adaugare</button>
+
+            <button type="submit" class="btn btn-dark">Cautare</button>
         </div>
     </form>
 
