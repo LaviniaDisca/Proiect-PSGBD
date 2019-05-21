@@ -42,14 +42,14 @@
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
-                    <li><a href="#">Add patient</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
                     <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="#">Find by the assigned doctor</a></li>
+                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -88,9 +88,8 @@
 
 <div> <?php
 
-    if ($data['id_med']!=null) {
         echo "<div class=\"Med\">
-        <div class=\"DocTbl\">Mediciul cu id-ul " . $data['id_med'] . ":</div>
+        <div class=\"DocTbl\">Medicul cu id-ul ".$data['id_med'].":</div>
         <table class=\"table table-hover table-dark\">
             <thead>
             <tr>
@@ -100,11 +99,8 @@
             </tr>
             </thead>
             <tbody>
-            <tr><td>" . $data['id_med'] . "</td><td>" . $data['name'] . "</td><td>" . $data['shift'] . "</td></tr>
+            <tr><td>".$data['id_med']."</td><td>".$data['name']."</td><td>".$data['shift']."</td></tr>
             </tbody>";
-
-    }
-    else echo "<div class=\"welcomeMsg\">Medicul nu este in baza de date!</div>";
 
 
     ?>

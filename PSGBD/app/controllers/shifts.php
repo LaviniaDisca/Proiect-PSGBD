@@ -18,23 +18,13 @@ class Shifts extends Controller
     public function Actiune()
     {
         $data= array();
+        $user_model = $this->loadModel('DoctorModel');
         if($_POST['Id'])
         {
             $id=$_POST['Id'];
-            $user_model = $this->loadModel('UserModel');
-            $ver=array();
-            $ver = $user_model->getShifts($id);
-            if($ver!=null) {
-                $data['id_med'] = $user_model->getShifts($id)[0];
-                $data['name'] = $user_model->getShifts($id)[1] . " " . $user_model->getShifts($id)[2];
-                $data['shift'] = $user_model->getShifts($id)[3] . "-" . $user_model->getShifts($id)[4];
-            }
-            else
-            {
-                $data['id_med'] = null;
-                $data['name'] = null;
-                $data['shift'] = null;
-            }
+            $data['id_med']=$user_model->getShifts($id)[0];
+            $data['name']=$user_model->getShifts($id)[1]." ".$user_model->getShifts($id)[2];
+            $data['shift']=$user_model->getShifts($id)[3]."-".$user_model->getShifts($id)[4];
         }
 
         if($_POST['actiune']=='Vizualizare') {

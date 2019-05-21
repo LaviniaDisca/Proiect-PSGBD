@@ -11,7 +11,7 @@ class Doctors extends Controller
         if (!isset($_SESSION["userID"])) {
             header('Location: ' . URL . 'Home');
         }
-        $user_model = $this->loadModel('UserModel');
+        $user_model = $this->loadModel('DoctorModel');
         $num=$user_model->getNum();
         $data['num']=$num[0];
         $ordered=$user_model->getBySpec();

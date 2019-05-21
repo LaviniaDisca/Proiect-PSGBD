@@ -46,14 +46,14 @@
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
-                    <li><a href="#">Add patient</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
                     <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="#">Find by the assigned doctor</a></li>
+                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -80,21 +80,25 @@
     <h1 class="well">Registration Form</h1>
     <div class="col-lg-12 well">
         <div class="row">
-            <form>
+            <form action="<?php echo URL ?>AddPatient/AddNewPatient" method="post">
                 <div class="col-sm-12">
                     <div class="row">
                         <div class="col-sm-6 form-group">
                             <label>First Name</label>
-                            <input type="text" placeholder="Enter First Name Here.." class="form-control">
+                            <input type="text" placeholder="Enter First Name Here.." class="form-control" name="first_name" required>
                         </div>
                         <div class="col-sm-6 form-group">
                             <label>Last Name</label>
-                            <input type="text" placeholder="Enter Last Name Here.." class="form-control">
+                            <input type="text" placeholder="Enter Last Name Here.." class="form-control" name="last_name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <span class="form-label">Date of Birth</span>
-                        <input class="form-control" placeholder="Enter Date of Birth Here.." type="date" name="birth_date" required>
+                        <input class="form-control" placeholder="Enter Date of Birth Here.." type="date" data-date="" data-date-format="DD MM YYYY" name="birth_date" value="2015-08-09" required >
+                    </div>
+                    <div class="form-group">
+                        <span class="form-label">Cause/Disease</span>
+                        <input class="form-control" placeholder="Enter Cause/Disease Here.." type="text" name="disease" required>
                     </div>
 <!--                    <div class="form-group">-->
 <!--                        <label>Address</label>-->
@@ -132,7 +136,7 @@
 <!--                        <label>Website</label>-->
 <!--                        <input type="text" placeholder="Enter Website Name Here.." class="form-control">-->
 <!--                    </div>-->
-                    <button type="button" class="btn btn-lg btn-info">Submit</button>
+                    <input type="submit" class="btn btn-lg btn-info" value="Submit">
                 </div>
             </form>
         </div>
@@ -141,6 +145,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
 <script src="<?php echo URL ?>public/js/Home.js"></script>
 </body>
 </html>

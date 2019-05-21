@@ -16,7 +16,6 @@ body {
 }
 
 
-
 .colors {
     width: 260px;
     float: left;
@@ -348,38 +347,37 @@ body {
 }
 
 
-
-
-
-.main{
-    margin-top:0px;
-    margin-left:0px;
-    height:100%;
+.main {
+    margin-top: 0px;
+    margin-left: 0px;
+    height: 100%;
 }
 
 
-.Med{
+.Med {
     margin-top: 50px;
     margin-left: 500px;
-    width:600px;
+    width: 600px;
 
 }
-.Med1{
+
+.Med1 {
     margin-top: 50px;
     margin-left: 650px;
-    width:200px;
+    width: 200px;
 
 }
 
 
-.welcomeMsg{
+.welcomeMsg {
     margin-left: 600px;
     font-size: xx-large;
     font-family: "Lucida Calligraphy";
     margin-top: 200px;
 
 }
-.DocMsg{
+
+.DocMsg {
     margin-left: 400px;
     font-size: xx-large;
     font-family: "Lucida Calligraphy";
@@ -387,40 +385,32 @@ body {
 
 }
 
-.DocTbl{
+.DocTbl {
     margin-left: 0px;
     font-size: xx-large;
     font-family: "Lucida Calligraphy";
-    width:600px;
+    width: 600px;
 
 }
 
-.CitireId{
-
-    width:300px;
+.CitireId {
+    width: 300px;
     margin-left: 600px;
     margin-top: 50px;
-
-
 }
 
 
-.logoHS{
+.logoHS {
     background-image: url(../images/logo2.png);
     height: 200px;
-    width:200px;
-    margin-left:87%;
+    width: 200px;
+    margin-left: 87%;
     position: absolute;
 }
 
-.logoHome{
+.logoHome {
     background-image: url(../images/logo2.png);
     height: 200px;
-    width:200px;
-    margin-left:87%;
+    width: 200px;
+    margin-left: 87%;
 }
-
-.Rez1 p {
-    margin-top: 200px;
-}
-

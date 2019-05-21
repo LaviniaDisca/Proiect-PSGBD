@@ -157,7 +157,7 @@ begin
 end;
 /
 
-create or replace procedure geNextMedId(c1 OUT SYS_REFCURSOR)
+create or replace procedure getNextMedId(c1 OUT SYS_REFCURSOR)
 is 
 begin
     open c1 for
@@ -165,9 +165,28 @@ begin
     group by med.id_medic
     having to_number(substr(med.id_medic,3))=(select max(to_number(substr(med1.id_medic,3))) from medici med1);
 end;
-
 /
 
+create or replace procedure getNextPatientId(c1 OUT SYS_REFCURSOR)
+is 
+begin
+    open c1 for
+    select 'P'||(to_char(to_number(substr(p.id_pacient,2))+1)) as "new_id" from pacienti p
+    group by p.id_pacient
+    having to_number(substr(p.id_pacient,2))=(select max(to_number(substr(p1.id_pacient,2))) from pacienti p1);
+end;
+/
+
+create or replace procedure getNextPatientFileId(c1 OUT SYS_REFCURSOR)
+is 
+begin
+    open c1 for
+    select (to_char(to_number(f.id_fisa)+1)) as "new_id" from fisa_pacienti f
+    group by f.id_fisa
+    having to_number(f.id_fisa)=(select max(to_number(f1.id_fisa)) from fisa_pacienti f1);
+end;
+
+/
 create or replace procedure getWardId(c1 OUT SYS_REFCURSOR, IN_name in sectii.nume_sectie%TYPE)
 is 
 begin
@@ -176,7 +195,7 @@ begin
 end;
 
 /
-create or replace procedure AddMEd (IN_id IN medici.id_medic%TYPE, IN_nume IN medici.nume%TYPE, IN_prenume IN medici.prenume%TYPE, 
+create or replace procedure AddMed (IN_id IN medici.id_medic%TYPE, IN_nume IN medici.nume%TYPE, IN_prenume IN medici.prenume%TYPE, 
 IN_sectie in detalii_medic.id_sectie%TYPE, IN_inceput IN detalii_medic.inceput_tura%TYPE, IN_sfarsit IN detalii_medic.sfarsit_tura%TYPE )
 is
 begin
@@ -185,8 +204,19 @@ insert into medici (id_medic, nume, prenume) values (IN_id, IN_nume, IN_prenume)
 insert into detalii_medic(id_medic, id_sectie, inceput_tura, sfarsit_tura) values (IN_id, IN_sectie, IN_inceput, IN_sfarsit);
 
 end;
-<<<<<<< HEAD
 /
+
+create or replace procedure AddPatient (IN_id IN pacienti.id_pacient%TYPE, IN_nume IN pacienti.nume%TYPE, IN_prenume IN pacienti.prenume%TYPE, 
+IN_data_nastere in pacienti.data_nastere%TYPE, IN_boala in fisa_pacienti.boala%type, IN_fisa in fisa_pacienti.id_fisa%type)
+is
+begin
+
+insert into pacienti (id_pacient, nume, prenume, data_nastere) values (IN_id, IN_nume, IN_prenume, IN_data_nastere);
+insert into fisa_pacienti(id_fisa, id_pacient, boala) values (IN_fisa, IN_id, IN_boala);
+
+end;
+/
+
 create or replace procedure deleteMed(IN_id IN medici.id_medic%TYPE)
 is
 begin
@@ -210,9 +240,8 @@ execute immediate 'ALTER TABLE tratamente
 ADD CONSTRAINT fk_tratamente_id_medic FOREIGN KEY (id_medic) REFERENCES medici(id_medic)';
 end;
 /
-=======
 
-/
+
 
 
 -- afisarea saloanelor libere pe o sectie
@@ -264,9 +293,6 @@ end;
 
 
 
-
-
->>>>>>> 2517a2bb3f99d24503dbcb7a7a93e8abf9890026
 
 
 

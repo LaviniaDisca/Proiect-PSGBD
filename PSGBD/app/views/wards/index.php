@@ -41,7 +41,7 @@
                     class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
-                    <li><a href="#">Patient file</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Patient file</a></li>
                     <li><a href="#">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
@@ -49,7 +49,7 @@
                     <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="#">Find by the assigned doctor</a></li>
+                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -72,7 +72,7 @@
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Pagina de cautarea sectiei careia ii este atribuit un medic</div>
+    <div class="DocMsg">Pagina de cautare a sectiei careia ii este atribuit un medic</div>
 
     <form action="<?php echo URL ?>Wards/Cautare" method="post">
         <div class="CitireId">

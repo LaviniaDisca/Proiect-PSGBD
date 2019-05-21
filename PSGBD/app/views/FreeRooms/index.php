@@ -13,7 +13,7 @@
     <title>Hopkins Hospital</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="<?php echo URL ?>public/css/AddPatient-style.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo URL ?>public/css/Home-style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -46,14 +46,14 @@
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
-                    <li><a href="#">Add patient</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
                     <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="#">Find by the assigned doctor</a></li>
+                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -76,27 +76,17 @@
     </div>
 </div>
 <div class="main">
-    <div class="logoHS"></div>
-    <div class="Med">
-        <div class="DocTbl">Saloane libere pe sectie:</div>
-        <table class="table table-hover table-dark">
-            <thead>
-            <tr>
-                <th scope="col">Ward Name</th>
-                <th scope="col">Nr. of Free Rooms</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $i = 0;
-            foreach ($data['specs'] as $spec) {
-                echo("<tr><td>" . $spec . "</td><td>" . $data['room'][$i] . "</td></tr>");
-                $i = $i + 1;
-            }
-            ?>
-            </tbody>
-        </table>
-    </div>
+    <div class="DocMsg">Pagina de vizualizare a saloanelor libere.</div>
+
+    <form action="<?php echo URL ?>FreeRooms/See" method="post">
+        <div class="CitireId">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Nume sectie" aria-label="Id" name="sectie"
+                       aria-describedby="addon-wrapping">
+            </div>
+            <input type="submit" name="actiune" value="Vizualizare">
+        </div>
+    </form>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

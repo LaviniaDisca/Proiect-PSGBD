@@ -9,7 +9,7 @@ class NumberOfHospitalizations extends Controller
         if (!isset($_SESSION["userID"])) {
             header('Location: ' . URL . 'Home');
         }
-        $user_model = $this->loadModel('UserModel');
+        $user_model = $this->loadModel('PatientModel');
         if (isset($_POST['patientID'])) {
             $patientID = $_POST['patientID'];
             $num = $user_model->getNbHospitalizations($patientID);
