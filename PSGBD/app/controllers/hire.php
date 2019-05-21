@@ -5,15 +5,13 @@ class Hire extends Controller
 {
     public function index()
     {
-        $data= array();
-        $user_model = $this->loadModel('UserModel');
-        $this->view('hire/index', $data);
+        $this->view('hire/index');
     }
 
     public function Adaugare()
     {
-        $nume=$_POST['first-name'];
-        $prenume=$_POST['last-name'];
+        $nume=$_POST['last-name'];
+        $prenume=$_POST['first-name'];
         $user_model = $this->loadModel('UserModel');
         $id=$user_model->getNextId()[0];
         $sectie=$_POST['ward'];

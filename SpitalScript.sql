@@ -83,8 +83,9 @@ constraint  fk_detalii_medic_id_medic FOREIGN KEY (id_medic) REFERENCES medici(i
 create table operatii (
 id_sala varchar2(20) NOT nULL,
 id_medic varchar2(20),
-inceput_operatie varchar2(20),
-incheiere_operatie varchar2(20),
+data_inceput_operatie date,
+ora_inceput_operatie varchar2(50),
+durata_operatie number,
 constraint  fk_operatii_id_sala FOREIGN KEY (id_sala) REFERENCES sali_operatie(id_sala),
 constraint  fk_operatii_id_medic FOREIGN KEY (id_medic) REFERENCES medici(id_medic)
 )
@@ -176,8 +177,9 @@ DECLARE
    v_nr_sala sali_operatie.numar_sala%type;
    
    --OPERATII
-   v_inceput_operatie operatii.inceput_operatie%type;
-   v_incheiere_operatie operatii.incheiere_operatie%type;
+   v_data_inceput_operatie operatii.data_inceput_operatie%type;
+    v_ora_inceput_operatie operatii.ora_inceput_operatie%type;
+   v_durata_operatie operatii.durata_operatie%type;
    
    --SALOANE
    v_id_salon saloane.id_salon%type;
@@ -372,11 +374,12 @@ BEGIN
     
    --OPERATII
       for v_i in 1..100 loop
-         select to_char(extract(hour from cast(sysdate as timestamp))+7) into v_hour  from dual;
-         v_inceput_operatie := v_hour + trunc(dbms_random.value(1,5));
-         v_incheiere_operatie := v_inceput_operatie + trunc(dbms_random.value(1,5));
-         insert into operatii(id_sala,id_medic,inceput_operatie,incheiere_operatie) values (id_sala_rep(v_i),id_medic_rep(v_i),v_inceput_operatie,v_incheiere_operatie);
+         v_data_inceput_operatie := to_date('01-01-2011', 'DD-MM-YYYY')+trunc(dbms_random.value(1,366*70)); 
+         v_ora_inceput_operatie := trunc(dbms_random.value(1,24));
+         v_durata_operatie := trunc(dbms_random.value(1,48));
+         insert into operatii(id_sala,id_medic,data_inceput_operatie,ora_inceput_operatie,durata_operatie) values (id_sala_rep(v_i),id_medic_rep(v_i),v_data_inceput_operatie,v_ora_inceput_operatie,v_durata_operatie);
       end loop;
+
 
       
     --Fisa pacient

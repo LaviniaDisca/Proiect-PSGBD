@@ -116,20 +116,6 @@ begin
 end;
 /
 
---  afisarea saloanelor libere pe fiecare sectie
-
-create or replace procedure getFreeSalon(c1 OUT SYS_REFCURSOR)
-is
-begin
-
-   open c1 for
-   SELECT  s.nume_sectie as "sect", count(apac.id_pacient) as "nb" FROM sectii s join asignare_salon sig on s.id_sectie=sig.id_sectie join saloane sl on sl.id_salon=sig.id_salon 
-                                                                join atribuire_pacient apac on apac.id_salon=sl.id_salon      
-   where sig.id_salon=apac.id_salon                                                        
-   group by s.nume_sectie,apac.id_pacient
-   having count(apac.id_pacient) <= sl.capacitate;
-end;
-
 --   afisarea numarului de internari a unui pacient
 
 create or replace procedure getNbHospitalizations(c1 OUT SYS_REFCURSOR,IN_id_pacient IN pacienti.id_pacient%type)
@@ -144,7 +130,7 @@ begin
 end;
 
 
-select * from pacienti;
+select * from medici where id_medic = 'MD1000001';
 
 
 /
@@ -199,6 +185,7 @@ insert into medici (id_medic, nume, prenume) values (IN_id, IN_nume, IN_prenume)
 insert into detalii_medic(id_medic, id_sectie, inceput_tura, sfarsit_tura) values (IN_id, IN_sectie, IN_inceput, IN_sfarsit);
 
 end;
+<<<<<<< HEAD
 /
 create or replace procedure deleteMed(IN_id IN medici.id_medic%TYPE)
 is
@@ -223,7 +210,9 @@ execute immediate 'ALTER TABLE tratamente
 ADD CONSTRAINT fk_tratamente_id_medic FOREIGN KEY (id_medic) REFERENCES medici(id_medic)';
 end;
 /
+=======
 
+/
 
 
 

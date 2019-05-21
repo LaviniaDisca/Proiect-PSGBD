@@ -34,7 +34,7 @@
                 <ul class="submenu">
                     <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
                     <li><a href="<?php echo URL ?>Hire">Hire </a></li>
-                    <li><a href="#">Fire </a></li>
+                    <li><a href="<?php echo URL ?>Fire">Fire </a></li>
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="#"><i class="fa fa-procedures"></i>Wards</a><span
@@ -84,6 +84,7 @@
         </div>
 <div> <?php
 
+    if($data['shift']!=null){
         echo "<div class=\"Med1\">
    
         <table class=\"table table-hover table-dark\">
@@ -96,22 +97,25 @@
             <tr><td>".$data['shift']."</td></tr>
             </tbody>
             </table>
-            </div>";
+            </div>
+            </div>
+
+    <div class=\"CitireId\">
+        <div class=\"input-group flex-nowrap\">
+            <input type=\"text\" class=\"form-control\" placeholder=\"Noua ora de inceput\" aria-label=\"new_start\" name=\"new_start\" aria-describedby=\"addon-wrapping\">
+        </div>
+        <div class=\"input-group flex-nowrap\">
+            <input type=\"text\" class=\"form-control\" placeholder=\"Noua ora de sfarsit\" aria-label=\"new_end\" name=\"new_end\" aria-describedby=\"addon-wrapping\">
+        </div>
+        <input type=\"submit\" name=\"actiune\" value=\"Modificare\">
+    </form>
+    </div>
+    ";}
+    else echo "<div class=\"welcomeMsg\">Medicul nu este in baza de date!</div>";
 
     ?>
 
-</div>
 
-    <div class="CitireId">
-        <div class="input-group flex-nowrap">
-            <input type="text" class="form-control" placeholder="Noua ora de inceput" aria-label="new_start" name="new_start" aria-describedby="addon-wrapping">
-        </div>
-        <div class="input-group flex-nowrap">
-            <input type="text" class="form-control" placeholder="Noua ora de sfarsit" aria-label="new_end" name="new_end" aria-describedby="addon-wrapping">
-        </div>
-        <input type="submit" name="actiune" value="Modificare">
-    </form>
-    </div>
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

@@ -146,6 +146,13 @@ class UserModel extends Model
 
     }
 
+    public function deleteMed($id)
+    {
+        $statement = oci_parse($this->database, "begin deleteMEd( :id); end;");
+        oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
+        oci_execute($statement);
+    }
+
 
     public function getFreeRooms()
     {

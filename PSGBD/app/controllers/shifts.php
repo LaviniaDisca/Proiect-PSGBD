@@ -22,9 +22,19 @@ class Shifts extends Controller
         {
             $id=$_POST['Id'];
             $user_model = $this->loadModel('UserModel');
-            $data['id_med']=$user_model->getShifts($id)[0];
-            $data['name']=$user_model->getShifts($id)[1]." ".$user_model->getShifts($id)[2];
-            $data['shift']=$user_model->getShifts($id)[3]."-".$user_model->getShifts($id)[4];
+            $ver=array();
+            $ver = $user_model->getShifts($id);
+            if($ver!=null) {
+                $data['id_med'] = $user_model->getShifts($id)[0];
+                $data['name'] = $user_model->getShifts($id)[1] . " " . $user_model->getShifts($id)[2];
+                $data['shift'] = $user_model->getShifts($id)[3] . "-" . $user_model->getShifts($id)[4];
+            }
+            else
+            {
+                $data['id_med'] = null;
+                $data['name'] = null;
+                $data['shift'] = null;
+            }
         }
 
         if($_POST['actiune']=='Vizualizare') {
