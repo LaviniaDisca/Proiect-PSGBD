@@ -215,6 +215,61 @@ end;
 /
 
 
+-- afisarea saloanelor libere pe o sectie
+
+
+create or replace procedure getFreeSalon(c1 OUT SYS_REFCURSOR, IN_name in sectii.nume_sectie%TYPE)
+is 
+begin
+    open c1 for
+   
+ select sl.id_salon as "salon"  FROM sectii s join asignare_salon sig on s.id_sectie=sig.id_sectie join saloane sl on sl.id_salon=sig.id_salon 
+                                                                join atribuire_pacient apac on apac.id_salon=sl.id_salon      
+   where s.nume_sectie = IN_name and sl.capacitate >
+   ( select count(apac2.id_pacient) from saloane sl2 join atribuire_pacient apac2 on apac2.id_salon=sl2.id_salon where sl.id_salon=sl2.id_salon  group by apac2.id_pacient )
+   order by 1;
+
+end;
+
+
+-- afisarea saloanelor ocupate pe o sectie
+
+create or replace procedure getOccupiedSalon(c1 OUT SYS_REFCURSOR, IN_name in sectii.nume_sectie%TYPE)
+is 
+begin
+    open c1 for
+   
+ select sl.id_salon as "salon"  FROM sectii s join asignare_salon sig on s.id_sectie=sig.id_sectie join saloane sl on sl.id_salon=sig.id_salon 
+                                                                join atribuire_pacient apac on apac.id_salon=sl.id_salon      
+   where s.nume_sectie = IN_name and sl.capacitate =
+   ( select count(apac2.id_pacient) from saloane sl2 join atribuire_pacient apac2 on apac2.id_salon=sl2.id_salon where sl.id_salon=sl2.id_salon  group by apac2.id_pacient )
+   order by 1;
+
+end;
+
+/
+
+
+create or replace procedure getWardbyId(c1 OUT SYS_REFCURSOR, IN_id IN medici.id_medic%TYPE)
+is 
+begin
+open c1 for
+    select s.nume_sectie as "nume" from sectii s join detalii_medic leg on leg.id_sectie=s.id_sectie join medici med on med.id_medic=leg.id_medic
+    where med.id_medic=IN_id;
+end;
+
+
+/
+
+
+
+
+
+
+>>>>>>> 2517a2bb3f99d24503dbcb7a7a93e8abf9890026
+
+
+
 
 
 
