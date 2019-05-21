@@ -251,8 +251,53 @@ delete from fisa_pacienti where id_pacient = IN_id;
 
 end;
 /
+drop index pacient_id_asigSal_ix;
 
+CREATE INDEX pacient_id_atrbPac_ix ON atribuire_pacient (id_pacient);
+/
+CREATE INDEX salon_id_atrbPac_ix ON atribuire_pacient (id_salon);
+/
+CREATE INDEX salon_id_asigSal_ix ON asignare_salon (id_salon);
+/
+CREATE INDEX sectie_id_asigSal_ix ON asignare_salon (id_sectie);
+/
+CREATE INDEX sectie_id_repartizare_ix ON repartizare (id_sectie);
+/
+CREATE INDEX sala_id_repartizare_ix ON repartizare (id_sala);
+/
+CREATE INDEX sala_id_operatii_ix ON operatii (id_sala);
+/
+CREATE INDEX medic_id_operatii_ix ON operatii (id_medic);
+/
+CREATE INDEX pacient_id_fisa_ix ON fisa_pacienti (id_pacient);
+/
+CREATE INDEX medic_id_fisa_ix ON fisa_pacienti (id_medic);
+/
+CREATE INDEX pacient_id_spitalizare_ix ON spitalizare (id_pacient);
+/
+CREATE INDEX internare_id_spitalizare_ix ON spitalizare (id_internare);
+/
+CREATE INDEX pacient_id_tratamente_ix ON tratamente (id_pacient);
+/
+CREATE INDEX medic_id_tratamente_ix ON tratamente (id_medic);
+/
+CREATE INDEX med1_id_tratamente_ix ON tratamente (id_med1);
+/
+CREATE INDEX med2_id_tratamente_ix ON tratamente (id_med2);
+/
+CREATE INDEX med3_id_tratamente_ix ON tratamente (id_med3);
+/
+CREATE INDEX med4_id_tratamente_ix ON tratamente (id_med4);
+/
+CREATE INDEX med5_id_tratamente_ix ON tratamente (id_med5);
+/
+CREATE INDEX med6_id_tratamente_ix ON tratamente (id_med6);
+/
+CREATE INDEX med7_id_tratamente_ix ON tratamente (id_med7);
+/
+CREATE INDEX med8_id_tratamente_ix ON tratamente (id_med8);
 
+/
 -- afisarea saloanelor libere pe o sectie
 
 
