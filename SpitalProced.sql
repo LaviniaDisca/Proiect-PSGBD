@@ -199,7 +199,30 @@ insert into medici (id_medic, nume, prenume) values (IN_id, IN_nume, IN_prenume)
 insert into detalii_medic(id_medic, id_sectie, inceput_tura, sfarsit_tura) values (IN_id, IN_sectie, IN_inceput, IN_sfarsit);
 
 end;
-
+/
+create or replace procedure deleteMed(IN_id IN medici.id_medic%TYPE)
+is
+begin
+execute immediate 'ALTER TABLE detalii_medic
+        DROP CONSTRAINT fk_detalii_medic_id_medic';
+execute immediate 'ALTER TABLE operatii
+        DROP CONSTRAINT fk_operatii_id_medic';
+execute immediate 'ALTER TABLE fisa_pacienti
+        DROP CONSTRAINT fk_fisa_pacienti_id_medic';
+execute immediate 'ALTER TABLE tratamente
+        DROP CONSTRAINT fk_tratamente_id_medic';
+delete from medici where id_medic= IN_id;
+delete from detalii_medic where id_medic= IN_id;
+execute immediate 'ALTER TABLE detalii_medic
+ADD CONSTRAINT fk_detalii_medic_id_medic FOREIGN KEY (id_medic) REFERENCES medici(id_medic)';
+execute immediate 'ALTER TABLE operatii
+ADD CONSTRAINT fk_operatii_id_medic FOREIGN KEY (id_medic) REFERENCES medici(id_medic)';
+execute immediate 'ALTER TABLE fisa_pacienti
+ADD CONSTRAINT fk_fisa_pacienti_id_medic FOREIGN KEY (id_medic) REFERENCES medici(id_medic)';
+execute immediate 'ALTER TABLE tratamente
+ADD CONSTRAINT fk_tratamente_id_medic FOREIGN KEY (id_medic) REFERENCES medici(id_medic)';
+end;
+/
 
 
 
