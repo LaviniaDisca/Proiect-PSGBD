@@ -37,7 +37,7 @@
                     <li><a href="<?php echo URL ?>Fire">Fire </a></li>
                     <li><a href="#">Book an OR </a></li>
                 </ul>
-            <li><a href="#"><i class="fa fa-procedures"></i>Wards</a><span
+            <li><a href="<?php echo URL ?>Wards"><i class="fa fa-procedures"></i>Wards</a><span
                     class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">

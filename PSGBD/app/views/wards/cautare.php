@@ -1,10 +1,6 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -13,7 +9,7 @@
     <title>Hopkins Hospital</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="<?php echo URL ?>public/css/AddPatient-style.css">
+    <link type="text/css" rel="stylesheet" href="<?php echo URL ?>public/css/Home-style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
@@ -42,7 +38,7 @@
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="<?php echo URL ?>Wards"><i class="fa fa-procedures"></i>Wards</a><span
-                        class="jquery-accordion-menu-label">20 </span></li>
+                    class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
                     <li><a href="#">Patient file</a></li>
@@ -69,37 +65,45 @@
                     <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
-            <li><a href="<?php echo URL ?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
+            <li><a href="#"><i class="fa fa-user"></i>About </a></li>
             <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
         </ul>
         <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">
-    <div class="logoHS"></div>
+    <div class="DocMsg">Pagina de cautarea sectiei careia ii este atribuit un medic</div>
+
+    <form action="<?php echo URL ?>Wards/Cautare" method="post">
+        <div class="CitireId">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Id Medic" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Cautare</button>
+        </div>
+    </form>
+
     <div class="Med">
-        <div class="DocTbl">Saloane libere pe sectie:</div>
-        <table class="table table-hover table-dark">
-            <thead>
-            <tr>
-                <th scope="col">Ward Name</th>
-                <th scope="col">Nr. of Free Rooms</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $i = 0;
-            foreach ($data['specs'] as $spec) {
-                echo("<tr><td>" . $spec . "</td><td>" . $data['room'][$i] . "</td></tr>");
-                $i = $i + 1;
-            }
-            ?>
-            </tbody>
-        </table>
+    <table class="table table-hover table-dark">
+        <thead>
+        <tr>
+            <th scope="col">Ward ID</th>
+            <th scope="col">Ward Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
+
+            echo("<tr><td>" . $data['id'] . "</td><td>" . $data['name'] . "</td></tr>");
+        ?>
+        </tbody>
+    </table>
     </div>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="<?php echo URL ?>public/js/Home.js"></script>
+<script src="http://localhost/PSGBD/public/js/Home.js"></script>
 </body>
 </html>
