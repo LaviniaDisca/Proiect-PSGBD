@@ -1,10 +1,6 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -50,10 +46,10 @@
                     <li><a href="<?php echo URL ?>Assign">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
-                    <li><a href="<?php echo URL ?>DischargePatient">Discharge</a></li>
+                    <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
+                    <li><a href="#">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -69,25 +65,28 @@
                     <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
-            <li><a href="<?php echo URL ?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
+            <li><a href="#"><i class="fa fa-user"></i>About </a></li>
             <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
         </ul>
         <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">
-    <form action="<?php echo URL ?>GetByAssignedDr/Display" method="post">
+    <div class="DocMsg">Pagina de asignare salon.</div>
+
+    <form action="<?php echo URL ?>Assign/Asignare" method="post">
         <div class="CitireId">
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Doctor ID" aria-label="Id" name="id"
-                       aria-describedby="addon-wrapping">
+                <input type="text" class="form-control" placeholder="Id Pacient" aria-label="Id_pac" name="Id_pac" aria-describedby="addon-wrapping">
             </div>
-            <input type="submit" name="actiune" value="Vizualizare">
+
+            <button type="submit" class="btn btn-dark">Asignare</button>
         </div>
     </form>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="<?php echo URL ?>public/js/Home.js"></script>
+<script src="http://localhost/PSGBD/public/js/Home.js"></script>
 </body>
 </html>

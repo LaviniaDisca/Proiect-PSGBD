@@ -35,22 +35,21 @@
                     <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
                     <li><a href="<?php echo URL ?>Hire">Hire </a></li>
                     <li><a href="<?php echo URL ?>Fire">Fire </a></li>
-                    <li><a href="<?php echo URL ?>Treatment">Prescribe treatment</a></li>
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="<?php echo URL ?>Wards"><i class="fa fa-procedures"></i>Wards</a><span
-                        class="jquery-accordion-menu-label">20 </span></li>
+                    class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
-                    <li><a href="#">Patient file</a></li>
+                    <li><a href="<?php echo URL ?>Fisa">Patient file</a></li>
                     <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
-                    <li><a href="#">Assign a room to a patient</a></li>
+                    <li><a href="<?php echo URL ?>Assign">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
-                    <li><a href="<?php echo URL ?>DischargePatient">Discharge</a></li>
+                    <li><a href="#">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
+                    <li><a href="#">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -85,25 +84,31 @@
         </div>
     </form>
 
-    <div class="Med">
-        <table class="table table-hover table-dark">
+
+ <?php
+ if($data['fisa']!=null){
+     echo"<div class=\"Med\">
+        <table class=\"table table-hover table-dark\">
             <thead>
             <tr>
 
-                <th scope="col">ID Fisa</th>
-                <th scope="col">ID Pacient</th>
-                <th scope="col">ID Doctor</th>
-                <th scope="col">Boala</th>
+                <th scope=\"col\">ID Fisa</th>
+                <th scope=\"col\">ID Pacient</th>
+                <th scope=\"col\">ID Doctor</th>
+                <th scope=\"col\">Boala</th>
             </tr>
             </thead>
             <tbody>
-            <?php
+            <tr><td>" . $data['fisa'] . "</td><td>" . $data['pacient'] . "</td><td>".$data['doctor']."</td><td>".$data['boala']."</td></tr>
 
-            echo("<tr><td>" . $data['fisa'] . "</td><td>" . $data['pacient'] . "</td><td>".$data['doctor']."</td><td>".$data['boala']."</td></tr>");
-            ?>
             </tbody>
         </table>
-    </div>
+    </div>";}
+    else {echo "<div class=\"welcomeMsg\">Pacientul nu este in baza de date</div>";}
+
+
+ ?>
+
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

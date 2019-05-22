@@ -79,4 +79,88 @@ class PatientModel extends Model
         }
         return $result;
     }
+
+
+    public function getFirstFreeSalon()
+    {
+        $result = array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin firstFreeSalon(:cursor); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_execute($statement);
+        oci_execute($c1);  // Execute the REF CURSOR like a normal statement id
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['salon']);
+        }
+        return $result;
+    }
+
+    public function assignSalon($id, $id_salon)
+    {
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin assign(:cursor,:id, :id_salon); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":id_salon", $id_salon, -1, SQLT_CHR);
+        oci_execute($statement);
+    }
+
+    public function NextFileId()
+    {
+        $result=array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin getNextFileID(:cursor); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['id']);
+        }
+        return $result;
+    }
+
+    public function NextIntId()
+    {
+        $result=array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin getNexIntID(:cursor); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['id']);
+        }
+        return $result;
+    }
+
+    public function Hospitalize($id_fisa, $id_pacient, $id_medic, $boala, $id_internare, $data)
+    {
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin Hospitalize(:cursor, :id_fisa, :id_pacient, :id_medic, :boala, :id_internare, :data_internare); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_bind_by_name($statement, ":id_fisa", $id_fisa, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":id_pacient", $id_pacient, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":id_medic", $id_medic, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":boala", $boala, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":id_internare", $id_internare, -1, SQLT_CHR);
+        oci_bind_by_name($statement, ":data_internare", $data, -1, SQLT_CHR);
+        oci_execute($statement);
+    }
+
+
+    public function getFisa($id)
+    {
+        $result = array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin Fisa(:cursor, :id); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['fisa'], $row['pacient'], $row['medic'], $row['boala']);
+        }
+        return $result;
+    }
+
 }
