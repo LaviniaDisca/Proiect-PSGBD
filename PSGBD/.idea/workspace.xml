@@ -16,55 +16,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/AddMeds/index.php">
+        <entry file="file://$PROJECT_DIR$/app/views/NumberOfHospitalizations/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="335">
-              <caret line="69" column="85" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="85" />
+            <state relative-caret-position="358">
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/controllers/LowStock.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/NumberOfHospitalizations/vizualizare.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
-              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/LowStock/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="75" column="49" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/stock.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="9" selection-end-line="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/checkStock/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/Treatment.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -72,24 +36,62 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/succes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="947">
+            <state relative-caret-position="647">
               <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/checkStock/succes.php">
+        <entry file="file://$PROJECT_DIR$/app/views/shifts/editare.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-838" />
+            <state relative-caret-position="425">
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/MedsModel.php">
+        <entry file="file://$PROJECT_DIR$/app/views/shifts/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
+            <state relative-caret-position="341">
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/shifts/succes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/shifts/vizualizare.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/wards/cautare.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/wards/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -98,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="426">
-              <caret line="88" column="114" selection-start-line="88" selection-start-column="114" selection-end-line="88" selection-end-column="114" />
+              <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -142,10 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/login/index.php" />
-        <option value="$PROJECT_DIR$/public/css/Home-style.css" />
-        <option value="$PROJECT_DIR$/app/views/home/home.php" />
-        <option value="$PROJECT_DIR$/app/controllers/FreeRooms.php" />
         <option value="$PROJECT_DIR$/app/models/PatientFile.php" />
         <option value="$PROJECT_DIR$/app/controllers/NumberOfHospitalizations.php" />
         <option value="$PROJECT_DIR$/app/models/UserModel.php" />
@@ -155,44 +153,48 @@
         <option value="$PROJECT_DIR$/app/controllers/hire.php" />
         <option value="$PROJECT_DIR$/public/js/Home.js" />
         <option value="$PROJECT_DIR$/app/controllers/AddPatient.php" />
-        <option value="$PROJECT_DIR$/app/views/AddPatient/succes.php" />
-        <option value="$PROJECT_DIR$/app/views/DischargePatient/index.php" />
-        <option value="$PROJECT_DIR$/app/views/DischargePatient/succes.php" />
-        <option value="$PROJECT_DIR$/app/views/fire/index.php" />
-        <option value="$PROJECT_DIR$/app/views/fire/succes.php" />
-        <option value="$PROJECT_DIR$/app/views/FreeRooms/index.php" />
-        <option value="$PROJECT_DIR$/app/views/FreeRooms/Vizualizare.php" />
-        <option value="$PROJECT_DIR$/app/views/GetByAssignedDr/index.php" />
-        <option value="$PROJECT_DIR$/app/views/hire/index.php" />
-        <option value="$PROJECT_DIR$/app/views/hire/succes.php" />
-        <option value="$PROJECT_DIR$/app/views/home/index.php" />
-        <option value="$PROJECT_DIR$/app/views/shifts/editare.php" />
-        <option value="$PROJECT_DIR$/app/views/shifts/index.php" />
-        <option value="$PROJECT_DIR$/app/views/shifts/succes.php" />
-        <option value="$PROJECT_DIR$/app/views/shifts/vizualizare.php" />
-        <option value="$PROJECT_DIR$/app/views/wards/index.php" />
         <option value="$PROJECT_DIR$/app/controllers/DischargePatient.php" />
         <option value="$PROJECT_DIR$/app/models/PatientModel.php" />
-        <option value="$PROJECT_DIR$/app/views/wards/cautare.php" />
-        <option value="$PROJECT_DIR$/app/views/NumberOfHospitalizations/index.php" />
         <option value="$PROJECT_DIR$/app/views/AddMeds.php" />
         <option value="$PROJECT_DIR$/app/controllers/AddMed.php" />
         <option value="$PROJECT_DIR$/app/models/DoctorModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/doctors.php" />
         <option value="$PROJECT_DIR$/app/controllers/AddMeds.php" />
         <option value="$PROJECT_DIR$/app/controllers/stock.php" />
-        <option value="$PROJECT_DIR$/app/views/AddMeds/succes.php" />
         <option value="$PROJECT_DIR$/app/views/doctors/index.php" />
-        <option value="$PROJECT_DIR$/app/views/AddPatient/index.php" />
         <option value="$PROJECT_DIR$/app/views/Treatment/index.php" />
-        <option value="$PROJECT_DIR$/app/views/PrescribeTreatment/index.php" />
         <option value="$PROJECT_DIR$/app/views/PrescribeTreatment/succes.php" />
         <option value="$PROJECT_DIR$/app/controllers/Treatment.php" />
-        <option value="$PROJECT_DIR$/app/views/AddMeds/index.php" />
-        <option value="$PROJECT_DIR$/app/views/checkStock/index.php" />
-        <option value="$PROJECT_DIR$/app/views/LowStock/index.php" />
         <option value="$PROJECT_DIR$/app/models/MedsModel.php" />
         <option value="$PROJECT_DIR$/app/controllers/LowStock.php" />
+        <option value="$PROJECT_DIR$/app/views/AddMeds/index.php" />
+        <option value="$PROJECT_DIR$/app/views/AddMeds/succes.php" />
+        <option value="$PROJECT_DIR$/app/views/AddPatient/index.php" />
+        <option value="$PROJECT_DIR$/app/views/AddPatient/succes.php" />
+        <option value="$PROJECT_DIR$/app/views/checkStock/index.php" />
+        <option value="$PROJECT_DIR$/app/views/checkStock/succes.php" />
+        <option value="$PROJECT_DIR$/app/views/DischargePatient/index.php" />
+        <option value="$PROJECT_DIR$/app/views/DischargePatient/succes.php" />
+        <option value="$PROJECT_DIR$/app/views/fire/index.php" />
+        <option value="$PROJECT_DIR$/app/views/fire/succes.php" />
+        <option value="$PROJECT_DIR$/app/views/fisa/cautare.php" />
+        <option value="$PROJECT_DIR$/app/views/fisa/index.php" />
+        <option value="$PROJECT_DIR$/app/views/FreeRooms/index.php" />
+        <option value="$PROJECT_DIR$/app/views/FreeRooms/Vizualizare.php" />
+        <option value="$PROJECT_DIR$/app/views/GetByAssignedDr/index.php" />
+        <option value="$PROJECT_DIR$/app/views/hire/index.php" />
+        <option value="$PROJECT_DIR$/app/views/hire/succes.php" />
+        <option value="$PROJECT_DIR$/app/views/home/index.php" />
+        <option value="$PROJECT_DIR$/app/views/LowStock/index.php" />
+        <option value="$PROJECT_DIR$/app/views/NumberOfHospitalizations/index.php" />
+        <option value="$PROJECT_DIR$/app/views/NumberOfHospitalizations/vizualizare.php" />
+        <option value="$PROJECT_DIR$/app/views/PrescribeTreatment/index.php" />
+        <option value="$PROJECT_DIR$/app/views/shifts/editare.php" />
+        <option value="$PROJECT_DIR$/app/views/shifts/index.php" />
+        <option value="$PROJECT_DIR$/app/views/shifts/succes.php" />
+        <option value="$PROJECT_DIR$/app/views/shifts/vizualizare.php" />
+        <option value="$PROJECT_DIR$/app/views/wards/cautare.php" />
+        <option value="$PROJECT_DIR$/app/views/wards/index.php" />
       </list>
     </option>
   </component>
@@ -200,7 +202,7 @@
     <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1350" />
@@ -212,7 +214,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -290,6 +291,13 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="fire" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PSGBD" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PSGBD" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="fisa" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PSGBD" type="b2602c69:ProjectViewProjectNode" />
@@ -386,6 +394,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -463,16 +472,18 @@
       <workItem from="1558444211618" duration="24000" />
       <workItem from="1558455560913" duration="15077000" />
       <workItem from="1558503709005" duration="4467000" />
+      <workItem from="1558509554607" duration="417000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112120000" />
+    <option name="totallyTimeSpent" value="112537000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.147651" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14966443" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -520,156 +531,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/js/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/fire.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="46" selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AddPatient/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/fire/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/fire/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/FreeRooms/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/FreeRooms/Vizualizare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/GetByAssignedDr/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="52" column="66" selection-start-line="52" selection-start-column="66" selection-end-line="52" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/hire/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/hire/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/home/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shifts/editare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shifts/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shifts/vizualizare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/DischargePatient/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/DischargePatient/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="879">
-          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/DischargePatient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="37" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/wards/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-192">
-          <caret line="48" column="66" selection-start-line="48" selection-start-column="66" selection-end-line="48" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/wards/cautare.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="90" column="34" selection-start-line="90" selection-start-column="34" selection-end-line="90" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NumberOfHospitalizations/vizualizare.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shifts/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="82" column="68" lean-forward="true" selection-start-line="82" selection-start-column="12" selection-end-line="82" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/NumberOfHospitalizations/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/NumberOfHospitalizations.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -756,20 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AddPatient/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="68" column="55" selection-start-line="68" selection-start-column="55" selection-end-line="68" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AddMeds/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="64" column="55" selection-start-line="64" selection-start-column="55" selection-end-line="64" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/hire.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -777,49 +624,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/Treatment/index.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/doctors/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="37" column="89" lean-forward="true" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="947">
-          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/Treatment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AddMeds/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="69" column="85" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checkStock/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/checkStock/succes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-838" />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/Treatment/index.php" />
     <entry file="file://$PROJECT_DIR$/app/controllers/stock.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -827,23 +632,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/index.php">
+    <entry file="file://$PROJECT_DIR$/app/controllers/Treatment.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="88" column="114" selection-start-line="88" selection-start-column="114" selection-end-line="88" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/LowStock/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="75" column="49" selection-start-line="75" selection-start-column="49" selection-end-line="75" selection-end-column="49" />
+        <state relative-caret-position="952">
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/MedsModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
+        <state relative-caret-position="1343">
           <caret line="79" column="32" selection-start-line="79" selection-start-column="32" selection-end-line="79" selection-end-column="32" />
         </state>
       </provider>
@@ -851,7 +649,224 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/LowStock.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/fisa.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AddMeds/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AddMeds/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AddPatient/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AddPatient/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/checkStock/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/checkStock/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/DischargePatient/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/DischargePatient/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/doctors/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="53" column="115" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/fire/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/fire/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/fisa/cautare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/fisa/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/FreeRooms/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/FreeRooms/Vizualizare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/GetByAssignedDr/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/hire/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/hire/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/home/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/LowStock/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NumberOfHospitalizations/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/NumberOfHospitalizations/vizualizare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shifts/editare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shifts/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shifts/succes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shifts/vizualizare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/wards/cautare.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/wards/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
         </state>
       </provider>
     </entry>

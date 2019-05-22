@@ -35,14 +35,15 @@
                     <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
                     <li><a href="<?php echo URL ?>Hire">Hire </a></li>
                     <li><a href="<?php echo URL ?>Fire">Fire </a></li>
+                    <li><a href="<?php echo URL ?>Treatment">Prescribe treatment</a></li>
                     <li><a href="#">Book an OR </a></li>
                 </ul>
             <li><a href="<?php echo URL ?>Wards"><i class="fa fa-procedures"></i>Wards</a><span
-                    class="jquery-accordion-menu-label">20 </span></li>
+                        class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
-                    <li><a href="<?php echo URL ?>AddPatient">Patient file</a></li>
-                    <li><a href="#">Add patient</a></li>
+                    <li><a href="#">Patient file</a></li>
+                    <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
