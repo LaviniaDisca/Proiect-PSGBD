@@ -555,4 +555,70 @@ begin
 end;
 
 
+/
+create or replace procedure Fisa(c1 OUT SYS_REFCURSOR, IN_id IN pacienti.id_pacient%TYPE)
+is 
+begin
+open c1 for
+   SELECT id_fisa as "fisa", id_pacient as "pacient", id_medic as "medic", boala as "boala" from fisa_pacienti
+   where id_pacient=IN_id;
+
+
+end;
+
+
+/
+create or replace procedure firstFreeSalon(c1 OUT SYS_REFCURSOR)
+is 
+begin
+open c1 for
+select s.id_salon as "salon"   FROM  saloane s
+where
+    s.id_salon= (select sl.id_salon from saloane sl 
+    where rownum=1 and sl.capacitate >
+   ( select count(apac2.id_pacient) from saloane sl2 join atribuire_pacient apac2 on apac2.id_salon=sl2.id_salon
+     where rownum=1 and sl.id_salon=sl2.id_salon  
+     group by apac2.id_pacient )
+   
+   );
+end;
+
+/
+
+create or replace procedure assign(c1 OUT SYS_REFCURSOR, IN_id IN pacienti.id_pacient%TYPE, IN_id_salon IN saloane.id_salon%TYPE)
+is 
+begin
+insert into atribuire_pacient (id_pacient, id_salon) values (IN_id, IN_id_salon);
+end;
+
+
+
+/
+create or replace procedure getNextFileID(c1 OUT SYS_REFCURSOR)
+is
+begin
+open c1 for
+ select to_number(id_fisa)+1 as "id" from fisa_pacienti
+ group by id_fisa
+ having id_fisa=(select max(to_number(f.id_fisa)) from fisa_pacienti f);
+end;
+/
+create or replace procedure getNexIntID(c1 OUT SYS_REFCURSOR)
+is
+begin
+open c1 for
+ select to_number(id_internare)+1 as "id" from internari
+ group by id_internare
+ having id_internare=(select max(to_number(i.id_internare)) from internari i);
+end;
+/
+create or replace procedure Hospitalize(c1 OUT SYS_REFCURSOR, IN_id_fisa in fisa_pacienti.id_fisa%type, IN_id_pacient in pacienti.id_pacient%type,
+IN_id_med in medici.id_medic%type,IN_boala in fisa_pacienti.boala%type, IN_id_internare in internari.id_internare%type, IN_data_internare in internari.data_internare%type)
+is
+begin
+
+insert into fisa_pacienti(id_fisa,id_pacient,id_medic, boala) values (IN_id_fisa,IN_id_pacient,IN_id_med,IN_boala);
+insert into internari (id_internare, data_internare, data_externare) values (IN_id_internare, IN_data_internare, null);
+
+end;
 
