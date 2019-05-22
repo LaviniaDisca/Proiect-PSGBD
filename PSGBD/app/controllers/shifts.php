@@ -25,6 +25,18 @@ class Shifts extends Controller
             $data['id_med']=$user_model->getShifts($id)[0];
             $data['name']=$user_model->getShifts($id)[1]." ".$user_model->getShifts($id)[2];
             $data['shift']=$user_model->getShifts($id)[3]."-".$user_model->getShifts($id)[4];
+            $i=1;
+            $data['ward']=array();
+            $data['num']=array();
+            $ordered=$user_model->Garda();
+            foreach ($ordered as $item) {
+                if ($i % 2 == 1)
+                    array_push($data['ward'], $item);
+                else
+                    array_push($data['num'], $item);
+                $i=$i+1;
+            }
+
         }
 
         if($_POST['actiune']=='Vizualizare') {

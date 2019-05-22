@@ -69,18 +69,34 @@
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Pagina de cautarea fisa de pacient</div>
+    <div class="DocMsg">Stoc medicamente.</div>
 
-    <form action="<?php echo URL ?>Fisa/Cautare" method="post">
-        <div class="CitireId">
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Id Pacient" aria-label="Id_pac" name="Id_pac" aria-describedby="addon-wrapping">
-            </div>
 
-            <button type="submit" class="btn btn-dark">Cautare</button>
-        </div>
-    </form>
 
+    <div> <?php
+
+        echo "<div class=\"Med\">
+
+        <table class=\"table table-hover table-dark\">
+            <thead>
+            <tr>
+                <th scope=\"col\">Medicament</th>
+                <th scope=\"col\">Cantitate</th>
+            </tr>
+            </thead>
+            <tbody>";
+        $i=0;
+
+        foreach ($data['med'] as $datum) {
+            echo" <tr><td>".$datum."</td><td>".$data['cant'][$i]."</td></tr>";
+            $i=$i+1;
+        }
+        echo"</tbody>";
+
+
+        ?>
+
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

@@ -606,3 +606,82 @@ begin
     insert into operatii (id_sala, id_medic, data_inceput_operatie, ora_inceput_operatie, durata_operatie)
       values (v_sala, IN_id_medic, IN_data_inceput_operatie, IN_ora, IN_durata);
 end;
+/
+
+
+
+/
+
+
+create or replace procedure Infants(c1 OUT SYS_REFCURSOR)
+is
+
+begin
+
+open c1 for
+select nvl(count(p.id_pacient),0) as "nr" from pacienti p
+where floor(months_between(sysdate, p.data_nastere)/365) <2;
+
+end;
+
+/
+
+create or replace procedure Kids(c1 OUT SYS_REFCURSOR)
+is
+
+begin
+
+open c1 for
+select count(p.id_pacient) as "nr" from pacienti p
+where floor(months_between(sysdate, p.data_nastere)/365) <18 and floor(months_between(sysdate, p.data_nastere)/365) >=2 
+group by p.id_pacient;
+
+end;
+/
+
+create or replace procedure adults(c1 OUT SYS_REFCURSOR)
+is
+
+begin
+
+open c1 for
+select count(p.id_pacient) as "nr" from pacienti p
+where floor(months_between(sysdate, p.data_nastere)/365) <65 and floor(months_between(sysdate, p.data_nastere)/365) >=18 ;
+
+end;
+/
+
+
+create or replace procedure elders(c1 OUT SYS_REFCURSOR)
+is
+
+begin
+
+open c1 for
+select count(p.id_pacient) as "nr" from pacienti p
+where floor(months_between(sysdate, p.data_nastere)/365) >=65;
+
+end;
+
+/
+
+create or replace procedure getbyDoctor(c1 OUT SYS_REFCURSOR, IN_id IN medici.id_medic%type)
+is
+begin
+open c1 for
+select p.id_pacient as "id", p.nume||' '||p.prenume as "nume", med.nume||' '||med.prenume as "nume_med" from pacienti p join fisa_pacienti f on f.id_pacient=p.id_pacient
+join medici med on f.id_medic=med.id_medic
+    where med.id_medic=IN_id;
+
+end;
+/
+create or replace procedure Garda (c1 OUT SYS_REFCURSOR)
+is
+begin
+open c1 for
+
+select s.nume_sectie as "sectie" ,count(med.id_medic) as "nr" from sectii s join detalii_medic d on d.id_sectie=s.id_sectie join medici med on med.id_medic=d.id_medic 
+where to_char(SYSDATE, 'HH24:MI:SS')< d.sfarsit_tura and to_char(SYSDATE, 'HH24:MI:SS')>d.inceput_tura
+group by s.id_sectie, s.nume_sectie;  
+
+end;
