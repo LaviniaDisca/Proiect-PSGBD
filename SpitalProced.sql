@@ -343,13 +343,216 @@ end;
 
 
 /
+create or replace procedure getNextMedsId(c1 OUT SYS_REFCURSOR)
+is 
+begin
+    open c1 for
+    select (to_char(to_number(m.id_medicament)+1)) as "new_id" from medicamente m
+    group by m.id_medicament
+    having to_number(m.id_medicament)=(select max(to_number(m1.id_medicament)) from medicamente m1);
+end;
+
+/
+
+create or replace procedure AddMeds (IN_id IN medicamente.id_medicament%TYPE, IN_nume IN medicamente.denumire%TYPE, IN_stoc medicamente.stoc%type)
+is
+
+begin
+
+insert into medicamente (id_medicament, denumire, stoc) values (IN_id, IN_nume, IN_stoc);
+
+end;
+
+/
+
+create or replace procedure checkStock (c1 OUT SYS_REFCURSOR)
+is
+
+begin
+
+    open c1 for
+    select denumire,stoc from medicamente
+    order by denumire;
+end;
+/
+
+--get med id by name
+
+create or replace procedure getMedId(c1 OUT SYS_REFCURSOR, IN_name in medicamente.denumire%type)
+is
+
+begin
+
+    open c1 for
+    select id_medicament from medicamente
+    where denumire = IN_name;
+end;
 
 
+/
 
+create or replace procedure addTreatment (IN_id_patient in pacienti.id_pacient%type, IN_id_doctor in medici.id_medic%type, IN_data_start in tratamente.data_inceput_tratament%type,
+IN_data_finish in tratamente.data_sfarsit_tratament%type, IN_med1 in tratamente.id_med1%type, IN_med2 in tratamente.id_med2%type, IN_med3 in tratamente.id_med3%type,
+IN_med4 in tratamente.id_med4%type, IN_med5 in tratamente.id_med5%type, IN_med6 in tratamente.id_med6%type, IN_med7 in tratamente.id_med7%type,
+IN_med8 in tratamente.id_med8%type)
+is
+  v_m1 tratamente.id_med1%type;
+  v_m2 tratamente.id_med2%type;
+  v_m3 tratamente.id_med3%type;
+  v_m4 tratamente.id_med4%type;
+  v_m5 tratamente.id_med5%type;
+  v_m6 tratamente.id_med6%type;
+  v_m7 tratamente.id_med7%type;
+  v_m8 tratamente.id_med8%type;
+begin
+  if(IN_med2 <> '-') then
+     if(IN_med3 <> '-') then
+         if(IN_med4 <> '-') then
+            if(IN_med5 <> '-') then
+               if(IN_med6 <> '-') then
+                  if(IN_med7 <> '-') then
+                      if(IN_med8 <> '-') then
+                         v_m1 := IN_med1;
+                         v_m2 := IN_med2;
+                         v_m3 := IN_med3;
+                         v_m4 := IN_med4;
+                         v_m5 := IN_med5;
+                         v_m6 := IN_med6;
+                         v_m7 := IN_med7;
+                         v_m8 := IN_med8;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med2;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med3;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med4;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med5;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med6;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med7;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med8;
+                      else
+                         v_m1 := IN_med1;
+                         v_m2 := IN_med2;
+                         v_m3 := IN_med3;
+                         v_m4 := IN_med4;
+                         v_m5 := IN_med5;
+                         v_m6 := IN_med6;
+                         v_m7 := IN_med7;
+                         v_m8 := null;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med2;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med3;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med4;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med5;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med6;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med7;
+                      end if;
+                  else
+                         v_m1 := IN_med1;
+                         v_m2 := IN_med2;
+                         v_m3 := IN_med3;
+                         v_m4 := IN_med4;
+                         v_m5 := IN_med5;
+                         v_m6 := IN_med6;
+                         v_m7 := null;
+                         v_m8 := null;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med2;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med3;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med4;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med5;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med6;
+                     end if;
+               else
+                         v_m1 := IN_med1;
+                         v_m2 := IN_med2;
+                         v_m3 := IN_med3;
+                         v_m4 := IN_med4;
+                         v_m5 := IN_med5;
+                         v_m6 := null;
+                         v_m7 := null;
+                         v_m8 := null;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med2;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament= IN_med3;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med4;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med5;
+                end if;
+            else
+                   v_m1 := IN_med1;
+                         v_m2 := IN_med2;
+                         v_m3 := IN_med3;
+                         v_m4 := IN_med4;
+                         v_m5 := null;
+                         v_m6 := null;
+                         v_m7 := null;
+                         v_m8 := null;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med2;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament= IN_med3;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med4;
+             end if;
+          else
+                         v_m1 := IN_med1;
+                         v_m2 := IN_med2;
+                         v_m3 := IN_med3;
+                         v_m4 := null;
+                         v_m5 := null;
+                         v_m6 := null;
+                         v_m7 := null;
+                         v_m8 := null;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med2;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament= IN_med3;
+            end if;
+        else
+                         v_m1 := IN_med1;
+                         v_m2 := IN_med2;
+                         v_m3 := null;
+                         v_m4 := null;
+                         v_m5 := null;
+                         v_m6 := null;
+                         v_m7 := null;
+                         v_m8 := null;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med2; 
+         end if;
+    else
+                       v_m1 := IN_med1;
+                         v_m2 := null;
+                         v_m3 := null;
+                         v_m4 := null;
+                         v_m5 := null;
+                         v_m6 := null;
+                         v_m7 := null;
+                         v_m8 := null;
+                         update medicamente m set m.stoc = to_char(to_number(m.stoc)-1) where id_medicament = IN_med1;
+    end if;
 
+   insert into tratamente (id_pacient, id_medic, data_inceput_tratament, data_sfarsit_tratament, id_med1, id_med2, id_med3, id_med4, id_med5, id_med6, id_med7, id_med8) 
+    values (IN_id_patient, IN_id_doctor, IN_data_start, IN_data_finish, v_m1, v_m2, v_m3, v_m4, v_m5, v_m6, v_m7, v_m8);
 
+end;
+/
 
+-- check if stock is under 50
 
+create or replace procedure checkLowStock (c1 OUT SYS_REFCURSOR)
+is
+
+begin
+
+    open c1 for
+    select denumire,stoc from medicamente
+    where to_number(stoc) < 50
+    order by denumire;   
+
+end;
+/
+
+create or replace procedure updateStock(IN_id_med in medicamente.id_medicament%type,IN_new_stock in medicamente.stoc%type)
+is
+begin
+   update medicamente set stoc = to_char(to_number(IN_new_stock)) where id_medicament = IN_id_med;
+end;
 
 
 

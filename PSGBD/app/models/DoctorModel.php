@@ -62,7 +62,7 @@ class DoctorModel extends Model
     {
         $result = array();
         $c1 = oci_new_cursor($this->database);
-        $statement = oci_parse($this->database, "begin geNextMedId(:cursor); end;");
+        $statement = oci_parse($this->database, "begin getNextMedId(:cursor); end;");
         oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
         oci_execute($statement);
         oci_execute($c1);

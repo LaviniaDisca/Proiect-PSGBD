@@ -45,7 +45,7 @@
                         class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
-                    <li><a href="<?php echo URL ?>Fisa">Patient file</a></li>
+                    <li><a href="#">Patient file</a></li>
                     <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
@@ -65,8 +65,8 @@
             </li>
             <li><a href="#"><i class="fa fa-pills"></i>Meds</a>
                 <ul class="submenu">
-                    <li><a href="#">Add a med </a></li>
-                    <li><a href="#">Check stock </a></li>
+                    <li><a href="<?php echo URL ?>AddMeds">Add a med </a></li>
+                    <li><a href="<?php echo URL ?>stock">Check stock </a></li>
                 </ul>
             </li>
             <li><a href="<?php echo URL ?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>

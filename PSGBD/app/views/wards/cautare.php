@@ -41,7 +41,7 @@
                     class="jquery-accordion-menu-label">20 </span></li>
             <li><a href="#"><i class="fa fa-user-injured"></i>Patients </a>
                 <ul class="submenu">
-                    <li><a href="<?php echo URL ?>Fisa">Patient file</a></li>
+                    <li><a href="#">Patient file</a></li>
                     <li><a href="<?php echo URL ?>AddPatient">Add patient</a></li>
                     <li><a href="#">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
@@ -88,7 +88,7 @@
     <table class="table table-hover table-dark">
         <thead>
         <tr>
-            <th scope="col">Ward ID</th>
+            <th scope="col">Doctor ID</th>
             <th scope="col">Ward Name</th>
         </tr>
         </thead>
