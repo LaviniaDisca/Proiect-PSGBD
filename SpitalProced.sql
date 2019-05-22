@@ -553,72 +553,56 @@ is
 begin
    update medicamente set stoc = to_char(to_number(IN_new_stock)) where id_medicament = IN_id_med;
 end;
-
-
-/
-create or replace procedure Fisa(c1 OUT SYS_REFCURSOR, IN_id IN pacienti.id_pacient%TYPE)
-is 
-begin
-open c1 for
-   SELECT id_fisa as "fisa", id_pacient as "pacient", id_medic as "medic", boala as "boala" from fisa_pacienti
-   where id_pacient=IN_id;
-
-
-end;
-
-
-/
-create or replace procedure firstFreeSalon(c1 OUT SYS_REFCURSOR)
-is 
-begin
-open c1 for
-select s.id_salon as "salon"   FROM  saloane s
-where
-    s.id_salon= (select sl.id_salon from saloane sl 
-    where rownum=1 and sl.capacitate >
-   ( select count(apac2.id_pacient) from saloane sl2 join atribuire_pacient apac2 on apac2.id_salon=sl2.id_salon
-     where rownum=1 and sl.id_salon=sl2.id_salon  
-     group by apac2.id_pacient )
-   
-   );
-end;
-
 /
 
-create or replace procedure assign(c1 OUT SYS_REFCURSOR, IN_id IN pacienti.id_pacient%TYPE, IN_id_salon IN saloane.id_salon%TYPE)
-is 
-begin
-insert into atribuire_pacient (id_pacient, id_salon) values (IN_id, IN_id_salon);
-end;
 
-
-
-/
-create or replace procedure getNextFileID(c1 OUT SYS_REFCURSOR)
+create or replace function bookOR (IN_id_medic in medici.id_medic%type) return varchar2
 is
+v_id_sala operatii.id_sala%type;
+v_sum num_arr;
+v_i number;
+v_day num_arr;
+V_done varchar2(5);
+v_result sali_operatie.id_sala%type;
+ cursor c1 is
+    select sala.id_sala from sali_operatie sala join operatii op on sala.id_sala=op.id_sala 
+    where  (op.data_inceput_operatie + v_day(ROWNUM)) < sysdate;
+    
 begin
-open c1 for
- select to_number(id_fisa)+1 as "id" from fisa_pacienti
- group by id_fisa
- having id_fisa=(select max(to_number(f.id_fisa)) from fisa_pacienti f);
+
+    select (op.durata_operatie + to_number(op.ora_inceput_operatie)) bulk collect into v_sum  from operatii op;
+    v_i := 1;
+    while (v_i < v_sum.count + 1) loop
+    if(v_sum(v_i) >= 24) then
+        v_day(v_i) := 1;
+    elsif  (v_sum(v_i) >= 48) then
+       v_day(v_i) := 2;
+    end if;
+     v_i := v_i +1;
+    end loop;
+    v_result := '0';
+    for c1_record in c1 loop
+       if v_done <> 'Done' then
+        select sala.id_sala  into v_result
+        from repartizare re join  sali_operatie sala on re.id_sala=sala.id_sala join operatii op on sala.id_sala=op.id_sala join medici m on m.id_medic = op.id_medic join detalii_medic det on det.id_medic = m.id_medic
+          where re.id_sectie = det.id_sectie and sala.id_sala = c1_record.id_sala;
+          if(v_result <> '0') then
+             v_done := 'Done';
+          end if;
+        end if;
+     end loop;     
+     
+    RETURN v_result;
 end;
 /
-create or replace procedure getNexIntID(c1 OUT SYS_REFCURSOR)
+
+create or replace procedure addTimeOR(IN_id_medic in medici.id_medic%type, IN_data_inceput_operatie in operatii.data_inceput_operatie%type,
+IN_ora in operatii.ora_inceput_operatie%type, IN_durata in operatii.durata_operatie%type)
 is
+v_sala sali_operatie.id_sala%type;
+
 begin
-open c1 for
- select to_number(id_internare)+1 as "id" from internari
- group by id_internare
- having id_internare=(select max(to_number(i.id_internare)) from internari i);
+    v_sala := bookOR(IN_id_medic);
+    insert into operatii (id_sala, id_medic, data_inceput_operatie, ora_inceput_operatie, durata_operatie)
+      values (v_sala, IN_id_medic, IN_data_inceput_operatie, IN_ora, IN_durata);
 end;
-/
-create or replace procedure Hospitalize(c1 OUT SYS_REFCURSOR, IN_id_fisa in fisa_pacienti.id_fisa%type, IN_id_pacient in pacienti.id_pacient%type,
-IN_id_med in medici.id_medic%type,IN_boala in fisa_pacienti.boala%type, IN_id_internare in internari.id_internare%type, IN_data_internare in internari.data_internare%type)
-is
-begin
-
-insert into fisa_pacienti(id_fisa,id_pacient,id_medic, boala) values (IN_id_fisa,IN_id_pacient,IN_id_med,IN_boala);
-insert into internari (id_internare, data_internare, data_externare) values (IN_id_internare, IN_data_internare, null);
-
-end;
-
