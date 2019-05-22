@@ -32,6 +32,7 @@
             <li class="active"><a href="<?php echo URL ?>Home"><i class="fa fa-home"></i>Home </a></li>
             <li><a href="<?php echo URL ?>Doctors"><i class="fa fa-user-md"></i>Doctors </a>
                 <ul class="submenu">
+                    <li><a href="<?php echo URL ?>SeeDoctor">See doctor </a></li>
                     <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
                     <li><a href="<?php echo URL ?>Hire">Hire </a></li>
                     <li><a href="<?php echo URL ?>Fire">Fire </a></li>
@@ -69,28 +70,18 @@
     </div>
 </div>
 <div class="main">
-    <div class="logoHS"></div>
-    <div class="DocMsg">Medicamente cu stoc minim: </div>
-    </div>
-    <div class="Med">
-        <table class="table table-hover table-dark">
-            <thead>
-            <tr>
-                <th scope="col">Med Name</th>
-                <th scope="col">Stock</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            $i = 0;
-            foreach ($data['names'] as $spec) {
-                echo("<tr><td>" . $spec . "</td><td>" . $data['stock'][$i] . "</td></tr>");
-                $i = $i + 1;
-            }
-            ?>
-            </tbody>
-        </table>
-    </div>
+    <div class="DocMsg">Pagina de detalii medic</div>
+
+    <form action="<?php echo URL ?>SeeDoctor/Cautare" method="post">
+        <div class="CitireId">
+            <div class="input-group flex-nowrap">
+                <input type="text" class="form-control" placeholder="Id Medic" aria-label="Id" name="Id" aria-describedby="addon-wrapping">
+            </div>
+
+            <button type="submit" class="btn btn-dark">Cautare</button>
+        </div>
+    </form>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

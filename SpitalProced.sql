@@ -555,31 +555,27 @@ begin
 end;
 /
 
-
 create or replace function bookOR (IN_id_medic in medici.id_medic%type) return varchar2
 is
 v_id_sala operatii.id_sala%type;
-v_sum num_arr;
-v_i number;
-v_day num_arr;
+v_sum num_arr := num_arr();
+v_day num_arr := num_arr();
 V_done varchar2(5);
 v_result sali_operatie.id_sala%type;
  cursor c1 is
     select sala.id_sala from sali_operatie sala join operatii op on sala.id_sala=op.id_sala 
     where  (op.data_inceput_operatie + v_day(ROWNUM)) < sysdate;
-    
 begin
-
     select (op.durata_operatie + to_number(op.ora_inceput_operatie)) bulk collect into v_sum  from operatii op;
-    v_i := 1;
-    while (v_i < v_sum.count + 1) loop
-    if(v_sum(v_i) >= 24) then
-        v_day(v_i) := 1;
-    elsif  (v_sum(v_i) >= 48) then
-       v_day(v_i) := 2;
-    end if;
-     v_i := v_i +1;
+    
+    for i in v_sum.first..v_sum.last loop
+      if(v_sum(i) >= 24) then
+        v_day(i) := 1;
+      elsif (v_sum(i) >= 48) then
+       v_day(i) :=  2;
+      end if;
     end loop;
+    
     v_result := '0';
     for c1_record in c1 loop
        if v_done <> 'Done' then
@@ -605,83 +601,4 @@ begin
     v_sala := bookOR(IN_id_medic);
     insert into operatii (id_sala, id_medic, data_inceput_operatie, ora_inceput_operatie, durata_operatie)
       values (v_sala, IN_id_medic, IN_data_inceput_operatie, IN_ora, IN_durata);
-end;
-/
-
-
-
-/
-
-
-create or replace procedure Infants(c1 OUT SYS_REFCURSOR)
-is
-
-begin
-
-open c1 for
-select nvl(count(p.id_pacient),0) as "nr" from pacienti p
-where floor(months_between(sysdate, p.data_nastere)/365) <2;
-
-end;
-
-/
-
-create or replace procedure Kids(c1 OUT SYS_REFCURSOR)
-is
-
-begin
-
-open c1 for
-select count(p.id_pacient) as "nr" from pacienti p
-where floor(months_between(sysdate, p.data_nastere)/365) <18 and floor(months_between(sysdate, p.data_nastere)/365) >=2 
-group by p.id_pacient;
-
-end;
-/
-
-create or replace procedure adults(c1 OUT SYS_REFCURSOR)
-is
-
-begin
-
-open c1 for
-select count(p.id_pacient) as "nr" from pacienti p
-where floor(months_between(sysdate, p.data_nastere)/365) <65 and floor(months_between(sysdate, p.data_nastere)/365) >=18 ;
-
-end;
-/
-
-
-create or replace procedure elders(c1 OUT SYS_REFCURSOR)
-is
-
-begin
-
-open c1 for
-select count(p.id_pacient) as "nr" from pacienti p
-where floor(months_between(sysdate, p.data_nastere)/365) >=65;
-
-end;
-
-/
-
-create or replace procedure getbyDoctor(c1 OUT SYS_REFCURSOR, IN_id IN medici.id_medic%type)
-is
-begin
-open c1 for
-select p.id_pacient as "id", p.nume||' '||p.prenume as "nume", med.nume||' '||med.prenume as "nume_med" from pacienti p join fisa_pacienti f on f.id_pacient=p.id_pacient
-join medici med on f.id_medic=med.id_medic
-    where med.id_medic=IN_id;
-
-end;
-/
-create or replace procedure Garda (c1 OUT SYS_REFCURSOR)
-is
-begin
-open c1 for
-
-select s.nume_sectie as "sectie" ,count(med.id_medic) as "nr" from sectii s join detalii_medic d on d.id_sectie=s.id_sectie join medici med on med.id_medic=d.id_medic 
-where to_char(SYSDATE, 'HH24:MI:SS')< d.sfarsit_tura and to_char(SYSDATE, 'HH24:MI:SS')>d.inceput_tura
-group by s.id_sectie, s.nume_sectie;  
-
 end;

@@ -32,6 +32,7 @@
             <li class="active"><a href="<?php echo URL ?>Home"><i class="fa fa-home"></i>Home </a></li>
             <li><a href="<?php echo URL ?>Doctors"><i class="fa fa-user-md"></i>Doctors </a>
                 <ul class="submenu">
+                    <li><a href="<?php echo URL ?>SeeDoctor">See doctor </a></li>
                     <li><a href="<?php echo URL ?>Shifts">Shifts </a></li>
                     <li><a href="<?php echo URL ?>Hire">Hire </a></li>
                     <li><a href="<?php echo URL ?>Fire">Fire </a></li>
