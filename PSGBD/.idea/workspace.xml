@@ -16,10 +16,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/NumberOfHospitalizations/index.php">
+        <entry file="file://$PROJECT_DIR$/app/views/AddMeds/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+            <state relative-caret-position="-362">
+              <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -87,7 +87,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/wards/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="544">
@@ -96,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+            <state relative-caret-position="392">
+              <caret line="103" column="66" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -188,13 +188,13 @@
         <option value="$PROJECT_DIR$/app/views/LowStock/index.php" />
         <option value="$PROJECT_DIR$/app/views/NumberOfHospitalizations/index.php" />
         <option value="$PROJECT_DIR$/app/views/NumberOfHospitalizations/vizualizare.php" />
-        <option value="$PROJECT_DIR$/app/views/PrescribeTreatment/index.php" />
         <option value="$PROJECT_DIR$/app/views/shifts/editare.php" />
         <option value="$PROJECT_DIR$/app/views/shifts/index.php" />
         <option value="$PROJECT_DIR$/app/views/shifts/succes.php" />
         <option value="$PROJECT_DIR$/app/views/shifts/vizualizare.php" />
         <option value="$PROJECT_DIR$/app/views/wards/cautare.php" />
         <option value="$PROJECT_DIR$/app/views/wards/index.php" />
+        <option value="$PROJECT_DIR$/app/views/PrescribeTreatment/index.php" />
       </list>
     </option>
   </component>
@@ -472,12 +472,12 @@
       <workItem from="1558444211618" duration="24000" />
       <workItem from="1558455560913" duration="15077000" />
       <workItem from="1558503709005" duration="4467000" />
-      <workItem from="1558509554607" duration="417000" />
+      <workItem from="1558509554607" duration="1046000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112537000" />
+    <option name="totallyTimeSpent" value="113166000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
@@ -660,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/AddMeds/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/AddMeds/succes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -814,13 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/succes.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="647">
@@ -867,6 +853,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="53" column="115" selection-start-line="53" selection-start-column="115" selection-end-line="53" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/AddMeds/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-362">
+          <caret line="57" column="115" selection-start-line="57" selection-start-column="115" selection-end-line="57" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/PrescribeTreatment/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="103" column="66" selection-start-line="103" selection-start-column="66" selection-end-line="103" selection-end-column="66" />
         </state>
       </provider>
     </entry>

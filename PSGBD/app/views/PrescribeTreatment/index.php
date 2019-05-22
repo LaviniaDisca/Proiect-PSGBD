@@ -96,12 +96,12 @@
                         </div>
                         <div class="col-sm-6 form-group">
                             <label>Started treatment on</label>
-                            <input type="text" placeholder="01-01-2010" class="form-control" name="start"
+                            <input type="text" placeholder="01-JAN-2010" class="form-control" name="start"
                                    required>
                         </div>
                         <div class="col-sm-6 form-group">
                             <label>Ended treatment on</label>
-                            <input type="text" placeholder="01-01-2010" class="form-control" name="finish"
+                            <input type="text" placeholder="01-JAN-2010" class="form-control" name="finish"
                                    required>
                         </div>
                     </div>
