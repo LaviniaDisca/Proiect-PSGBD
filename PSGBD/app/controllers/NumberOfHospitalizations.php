@@ -13,7 +13,12 @@ class NumberOfHospitalizations extends Controller
         if (isset($_POST['patientID'])) {
             $patientID = $_POST['patientID'];
             $num = $user_model->getNbHospitalizations($patientID);
-            $data['num'] = $num[0];
+            $verificare=$num;
+                if($verificare==null)
+                    $data['num']=0;
+
+            else $data['num'] = $num[0];
+
         } else {
             $data['num'] = '';
         }

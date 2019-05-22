@@ -46,10 +46,10 @@
                     <li><a href="<?php echo URL ?>Assign">Assign a room to a patient</a></li>
                     <li><a href="#">Hospitalize a patient</a></li>
                     <li><a href="#">Assign a treatment</a></li>
-                    <li><a href="#">Discharge</a></li>
+                    <li><a href="<?php echo URL ?>DischargePatient">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
                     <li><a href="#">Ordered by age </a></li>
-                    <li><a href="#">Find by the assigned doctor</a></li>
+                    <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
             </li>
@@ -65,28 +65,34 @@
                     <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
-            <li><a href="<?php echo URL ?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
+            <li><a href="<?php echo URL?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
         </ul>
     </div>
 </div>
 <div class="main">
-    <div class="DocMsg">Pagina de cautarea fisa de medic</div>
+    <div class="logoHS"></div>
+    <div class="DocMsg">Numarul de pacienti pentru fiecare grupa de varsta.
+    </div>
+    <div class="Med">
+        <table class="table table-hover table-dark">
+            <thead>
+            <tr>
+                <th scope="col">Categorie</th>
+                <th scope="col">Numar</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
 
-    <form action="<?php echo URL ?>Assign/Asignare" method="post">
-        <div class="CitireId">
-            <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Id Pacient" aria-label="Id_pac" name="Id_pac" aria-describedby="addon-wrapping">
-            </div>
+                echo("<tr><td>Sugari ( <2 ani)</td><td>" . $data['infants'] . "</td></tr>
+                      <tr><td>Copii ( 12-18 ani)</td><td>" . $data['kids'] . "</td></tr>
+                      <tr><td>Adulti ( 18-65 ani)</td><td>" . $data['adults'] . "</td></tr>
+                      <tr><td>Batrani ( >65 ani)</td><td>" . $data['elders'] . "</td></tr>");
 
-            <button type="submit" class="btn btn-dark">Asignare</button>
-        </div>
-    </form>
-
-    <div class="welcomeMsg">Pacientul i-a fost asignat salonul <?php echo $data['id_salon']; ?> </div>
-
-
-
-
+            ?>
+            </tbody>
+        </table>
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

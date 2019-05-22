@@ -48,7 +48,7 @@
                     <li><a href="#">Assign a treatment</a></li>
                     <li><a href="<?php echo URL ?>DischargePatient">Discharge</a></li>
                     <li><a href="#">Under treatment </a></li>
-                    <li><a href="#">Ordered by age </a></li>
+                    <li><a href="<?php echo URL ?>byAge">Ordered by age </a></li>
                     <li><a href="<?php echo URL ?>GetByAssignedDr">Find by the assigned doctor</a></li>
                     <li><a href="<?php echo URL ?>NumberOfHospitalizations">Get number of hospitalizations</a></li>
                 </ul>
@@ -66,9 +66,7 @@
                 </ul>
             </li>
             <li><a href="<?php echo URL?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
-            <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
         </ul>
-        <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">

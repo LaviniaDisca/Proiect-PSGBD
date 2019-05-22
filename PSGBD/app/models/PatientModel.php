@@ -54,13 +54,13 @@ class PatientModel extends Model
     {
         $result = array();
         $c1 = oci_new_cursor($this->database);
-        $statement = oci_parse($this->database, "begin getByAssignedDr(:cursor,:id); end;");
+        $statement = oci_parse($this->database, "begin getbyDoctor(:cursor,:id); end;");
         oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
         oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
         oci_execute($statement);
         oci_execute($c1);
         while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-            array_push($result, $row['name'], $row['pren'], $row['drName'], $row['drPren']);
+            array_push($result, $row['id'], $row['nume'], $row['nume_med']);
         }
         return $result;
     }
@@ -103,6 +103,63 @@ class PatientModel extends Model
         oci_bind_by_name($statement, ":id", $id, -1, SQLT_CHR);
         oci_bind_by_name($statement, ":id_salon", $id_salon, -1, SQLT_CHR);
         oci_execute($statement);
+    }
+
+
+
+    public function InfantsNumber()
+    {
+        $result=array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin Infants(:cursor); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['nr']);
+        }
+        return $result;
+    }
+
+    public function KidsNumber()
+    {
+        $result=array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin Kids(:cursor); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['nr']);
+        }
+        return $result;
+    }
+    public function AdultsNumber()
+    {
+        $result=array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin adults(:cursor); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['nr']);
+        }
+        return $result;
+    }
+
+    public function EldersNumber()
+    {
+        $result=array();
+        $c1 = oci_new_cursor($this->database);
+        $statement = oci_parse($this->database, "begin elders(:cursor); end;");
+        oci_bind_by_name($statement, ":cursor", $c1, -1, OCI_B_CURSOR);
+        oci_execute($statement);
+        oci_execute($c1);
+        while (($row = oci_fetch_array($c1, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            array_push($result, $row['nr']);
+        }
+        return $result;
     }
 
     public function NextFileId()

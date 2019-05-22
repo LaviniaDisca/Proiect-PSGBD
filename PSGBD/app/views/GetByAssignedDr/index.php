@@ -70,16 +70,15 @@
                 </ul>
             </li>
             <li><a href="<?php echo URL ?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
-            <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
         </ul>
-        <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">
+    <div class="DocMsg">Pagina de vizualizare a pacientilor tratati de un anumit medic.</div>
     <form action="<?php echo URL ?>GetByAssignedDr/Display" method="post">
         <div class="CitireId">
             <div class="input-group flex-nowrap">
-                <input type="text" class="form-control" placeholder="Doctor ID" aria-label="Id" name="id"
+                <input type="text" class="form-control" placeholder="Doctor ID" aria-label="Id" name="Id"
                        aria-describedby="addon-wrapping">
             </div>
             <input type="submit" name="actiune" value="Vizualizare">

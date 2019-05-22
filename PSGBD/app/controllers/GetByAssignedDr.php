@@ -20,21 +20,28 @@ class GetByAssignedDr extends Controller
         if (!isset($_SESSION["userID"])) {
             header('Location: ' . URL . 'Home');
         }
-        if (isset($_POST['id'])) {
+        if (isset($_POST['Id'])) {
 
-            $id = $_POST['id'];
-            $data['id'] = $id;
+            $id = $_POST['Id'];
+            $data['Id'] = $id;
+
             $result = $user_model->getByAssignedDr($id);
+            $data['nume_med']=$result[2];
             $data['patients'] = array();
+            $i=1;
             foreach ($result as $item) {
-                array_push($data['patients'], $item);
+                if ($i % 2 == 0)
+                    array_push($data['patients'], $item);
+                $i=$i+1;
+                if($i==4)
+                    $i=1;
             }
         } else {
             $data['patients'] = '';
         }
         if ($_POST['actiune'] == 'Vizualizare') {
 
-            $this->view('GetByAssignedDr/Vizualizare', $data);
+            $this->view('GetByAssignedDr/vizualizare', $data);
         }
 
     }

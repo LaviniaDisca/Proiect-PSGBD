@@ -65,10 +65,8 @@
                     <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="fa fa-user"></i>About </a></li>
-            <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
+            <li><a href="<?php echo URL ?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
         </ul>
-        <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">

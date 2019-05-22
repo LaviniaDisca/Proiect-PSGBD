@@ -65,10 +65,8 @@
                     <li><a href="#">Check stock </a></li>
                 </ul>
             </li>
-            <li><a href="#"><i class="fa fa-user"></i>About </a></li>
-            <li><a href="#"><i class="fa fa-envelope"></i>Contact </a></li>
+            <li><a href="<?php echo URL?>Login/logOut"><i class="fas fa-sign-out-alt"></i>Log out </a></li>
         </ul>
-        <div class="jquery-accordion-menu-footer">Footer</div>
     </div>
 </div>
 <div class="main">
@@ -82,9 +80,10 @@
             <button type="submit" class="btn btn-dark">See</button>
         </div>
     </form>
+    <div class="welcomeMsg">
+       Numarul de spitalizari: <p><?php echo $data['num'] ?></p>
 </div>
-<div class="Rez1">
-    <p><?php echo $data['num'] ?></p>
+
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
